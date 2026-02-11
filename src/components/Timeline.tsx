@@ -55,8 +55,8 @@ function TimelineStep({ step, index }: { step: typeof steps[0]; index: number })
 
       {/* Content side */}
       <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pl-10" : "md:pr-10 md:text-right"}`}>
-        <h4 style={{ fontFamily: "var(--font-degular)", fontSize: 24, fontWeight: 500, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#fff", margin: "0 0 8px" }}>{step.title}</h4>
-        <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 500, lineHeight: 1.5, color: "rgba(255,255,255,0.5)", margin: 0 }}>{step.body}</p>
+        <h4 style={{ fontFamily: "var(--font-degular)", fontSize: 24, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#fff", margin: "0 0 8px" }}>{step.title}</h4>
+        <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 400, lineHeight: 1.5, color: "rgba(255,255,255,0.5)", margin: 0 }}>{step.body}</p>
       </div>
     </motion.div>
   );
@@ -78,10 +78,10 @@ export default function Timeline() {
           <p style={{ fontFamily: "var(--font-inter)", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(255,255,255,0.4)", marginBottom: 16 }}>
             Zero Risk, All Upside
           </p>
-          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#fff", margin: 0 }}>
+          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#fff", margin: 0 }}>
             Forget 6-month IT projects.
           </h2>
-          <p style={{ fontFamily: "var(--font-degular)", fontSize: 18, fontWeight: 500, color: "rgba(255,255,255,0.5)", marginTop: 16 }}>
+          <p style={{ fontFamily: "var(--font-degular)", fontSize: 18, fontWeight: 400, color: "rgba(255,255,255,0.5)", marginTop: 16 }}>
             What 2 weeks looks like with Zavis
           </p>
         </motion.div>

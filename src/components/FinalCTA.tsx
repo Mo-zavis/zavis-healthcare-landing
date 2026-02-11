@@ -62,11 +62,11 @@ export default function FinalCTA() {
             />
           </svg>
 
-          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#fff", margin: 0, maxWidth: 600 }}>
+          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#fff", margin: 0, maxWidth: 600 }}>
             Ready to Transform Patient Engagement?
           </h2>
 
-          <p style={{ fontFamily: "var(--font-geist)", fontSize: 16, fontWeight: 500, lineHeight: 1.5, color: "rgba(255,255,255,0.5)", margin: 0, maxWidth: 500 }}>
+          <p style={{ fontFamily: "var(--font-geist)", fontSize: 16, fontWeight: 400, lineHeight: 1.5, color: "rgba(255,255,255,0.5)", margin: 0, maxWidth: 500 }}>
             Book a demo to see Zavis in action, or start your free pilot to experience the difference.
           </p>
 

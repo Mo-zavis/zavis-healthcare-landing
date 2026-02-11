@@ -67,7 +67,7 @@ export default function OneTruth() {
           transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.2 }}
           style={{ textAlign: "center", marginBottom: 48 }}
         >
-          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1A1A2E", margin: 0 }}>
+          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1A1A2E", margin: 0 }}>
             One platform every team trusts
           </h2>
         </motion.div>
@@ -115,15 +115,15 @@ export default function OneTruth() {
               borderRadius: 24,
               padding: "32px",
               boxShadow: cardShadow,
-              border: "1px solid rgba(0,0,0,0.12)",
+              border: "1px solid rgba(0,0,0,0.06)",
             }}
           >
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               <div>
-                <h3 style={{ fontFamily: "var(--font-degular)", fontSize: 32, fontWeight: 500, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1A1A2E", margin: 0 }}>
+                <h3 style={{ fontFamily: "var(--font-degular)", fontSize: 32, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1A1A2E", margin: 0 }}>
                   {tabs[active].title}
                 </h3>
-                <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 500, lineHeight: 1.4, color: "rgba(0,0,0,0.56)", marginTop: 8 }}>
+                <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 400, lineHeight: 1.4, color: "rgba(0,0,0,0.56)", marginTop: 8 }}>
                   {tabs[active].subtitle}
                 </p>
               </div>
@@ -153,10 +153,10 @@ export default function OneTruth() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, marginTop: 16 }}>
                 {tabs[active].features.map((feat) => (
                   <div key={feat.title} style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                    <h4 style={{ fontFamily: "var(--font-degular)", fontSize: 23, fontWeight: 500, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1A1A2E", margin: 0 }}>
+                    <h4 style={{ fontFamily: "var(--font-degular)", fontSize: 23, fontWeight: 600, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1A1A2E", margin: 0 }}>
                       {feat.title}
                     </h4>
-                    <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 500, lineHeight: 1.5, color: "rgba(0,0,0,0.56)", margin: 0 }}>
+                    <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 400, lineHeight: 1.5, color: "rgba(0,0,0,0.56)", margin: 0 }}>
                       {feat.body}
                     </p>
                   </div>

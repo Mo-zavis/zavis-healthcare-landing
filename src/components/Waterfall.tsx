@@ -20,7 +20,7 @@ export default function Waterfall() {
     >
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{
             type: "spring",
@@ -31,10 +31,10 @@ export default function Waterfall() {
           }}
           style={{
             backgroundColor: "#fff",
-            borderRadius: 24,
+            borderRadius: 20,
             padding: "32px 32px 40px",
             boxShadow: cardShadow,
-            border: "1px solid rgba(0,0,0,0.08)",
+            border: "1px solid rgba(0,0,0,0.06)",
           }}
         >
           <div
@@ -58,7 +58,7 @@ export default function Waterfall() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.06em",
-                    color: "rgba(0,0,0,0.32)",
+                    color: "rgba(0,0,0,0.4)",
                   }}
                 >
                   Traditional Waterfall
@@ -67,9 +67,9 @@ export default function Waterfall() {
                   style={{
                     position: "relative",
                     width: "100%",
-                    height: 40,
-                    borderRadius: 8,
-                    backgroundColor: "#F1F0EC",
+                    height: 48,
+                    borderRadius: 10,
+                    backgroundColor: "rgba(0,0,0,0.03)",
                     overflow: "hidden",
                   }}
                 >
@@ -86,8 +86,8 @@ export default function Waterfall() {
                       left: 0,
                       top: 0,
                       height: "100%",
-                      backgroundColor: "#ecebe8",
-                      borderRadius: 8,
+                      backgroundColor: "rgba(0,0,0,0.08)",
+                      borderRadius: 10,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "flex-end",
@@ -133,9 +133,9 @@ export default function Waterfall() {
                   style={{
                     position: "relative",
                     width: "100%",
-                    height: 40,
-                    borderRadius: 8,
-                    backgroundColor: "#F1F0EC",
+                    height: 48,
+                    borderRadius: 10,
+                    backgroundColor: "rgba(0,0,0,0.03)",
                     overflow: "hidden",
                   }}
                 >
@@ -153,8 +153,8 @@ export default function Waterfall() {
                       top: 0,
                       height: "100%",
                       backgroundColor: "#00C67E",
-                      borderRadius: 8,
-                      minWidth: 100,
+                      borderRadius: 10,
+                      minWidth: 120,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -180,8 +180,8 @@ export default function Waterfall() {
               style={{
                 fontFamily: "var(--font-geist)",
                 fontSize: 15,
-                fontWeight: 500,
-                lineHeight: 1.5,
+                fontWeight: 400,
+                lineHeight: 1.6,
                 textAlign: "center",
                 color: "rgba(0,0,0,0.56)",
                 maxWidth: 700,

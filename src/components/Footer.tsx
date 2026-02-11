@@ -44,7 +44,7 @@ export default function Footer() {
         backgroundColor: "#F1F0EC",
         paddingTop: 40,
         paddingBottom: 32,
-        borderTop: "1px solid rgba(0,0,0,0.08)",
+        borderTop: "1px solid rgba(0,0,0,0.06)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
@@ -72,7 +72,7 @@ export default function Footer() {
               style={{
                 fontFamily: "var(--font-geist)",
                 fontSize: 14,
-                fontWeight: 500,
+                fontWeight: 400,
                 color: "rgba(0,0,0,0.56)",
                 margin: 0,
               }}
@@ -172,7 +172,7 @@ export default function Footer() {
             gap: 16,
             marginTop: 32,
             paddingTop: 24,
-            borderTop: "1px solid rgba(0,0,0,0.08)",
+            borderTop: "1px solid rgba(0,0,0,0.06)",
             alignItems: "flex-start",
           }}
         >
@@ -180,7 +180,7 @@ export default function Footer() {
             style={{
               fontFamily: "var(--font-inter)",
               fontSize: 13,
-              fontWeight: 500,
+              fontWeight: 400,
               color: "rgba(0,0,0,0.32)",
               margin: 0,
             }}

@@ -48,9 +48,6 @@ const edgeCases = [
   },
 ];
 
-const cardShadow =
-  "0px 0.71px 0.71px -0.42px rgba(0,0,0,0.03), 0px 1.81px 1.81px -0.83px rgba(0,0,0,0.03), 0px 3.62px 3.62px -1.25px rgba(0,0,0,0.03), 0px 6.87px 6.87px -1.67px rgba(0,0,0,0.03), 0px 13.65px 13.65px -2.08px rgba(0,0,0,0.03), 0px 30px 30px -2.5px rgba(0,0,0,0.03)";
-
 function EdgeCaseCard({
   ec,
   index,
@@ -63,7 +60,7 @@ function EdgeCaseCard({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
         type: "spring",
@@ -74,33 +71,35 @@ function EdgeCaseCard({
       }}
       style={{
         backgroundColor: "#fff",
-        borderRadius: 24,
-        padding: 32,
+        borderRadius: 20,
+        padding: 28,
         display: "flex",
         flexDirection: "column",
-        gap: 20,
-        boxShadow: cardShadow,
-        border: "1px solid rgba(0,0,0,0.08)",
+        gap: 18,
+        border: "1px solid rgba(0,0,0,0.06)",
       }}
     >
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        <span
-          style={{
-            fontFamily: "var(--font-inter)",
-            display: "inline-block",
-            width: "fit-content",
-            padding: "4px 10px",
-            borderRadius: 4,
-            backgroundColor: "rgba(0,0,0,0.04)",
-            fontSize: 11,
-            fontWeight: 700,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            color: "rgba(0,0,0,0.4)",
-          }}
-        >
-          {ec.category}
-        </span>
+      {/* Category badge */}
+      <span
+        style={{
+          fontFamily: "var(--font-inter)",
+          display: "inline-block",
+          width: "fit-content",
+          padding: "5px 12px",
+          borderRadius: 6,
+          backgroundColor: "rgba(0,0,0,0.04)",
+          fontSize: 12,
+          fontWeight: 600,
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          color: "rgba(0,0,0,0.5)",
+        }}
+      >
+        {ec.category}
+      </span>
+
+      {/* The Problem section */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         <p
           style={{
             fontFamily: "var(--font-inter)",
@@ -108,7 +107,7 @@ function EdgeCaseCard({
             fontWeight: 600,
             textTransform: "uppercase",
             letterSpacing: "0.08em",
-            color: "rgba(0,0,0,0.32)",
+            color: "rgba(0,0,0,0.3)",
             margin: 0,
           }}
         >
@@ -118,9 +117,9 @@ function EdgeCaseCard({
           style={{
             fontFamily: "var(--font-geist)",
             fontSize: 15,
-            lineHeight: 1.5,
-            color: "#1A1A2E",
-            fontWeight: 500,
+            lineHeight: 1.6,
+            color: "rgba(0,0,0,0.7)",
+            fontWeight: 400,
             fontStyle: "italic",
             margin: 0,
           }}
@@ -128,13 +127,17 @@ function EdgeCaseCard({
           &ldquo;{ec.problem}&rdquo;
         </p>
       </div>
+
+      {/* Divider */}
       <div
         style={{
           width: "100%",
           height: 1,
-          backgroundColor: "rgba(0,0,0,0.08)",
+          backgroundColor: "rgba(0,0,0,0.06)",
         }}
       />
+
+      {/* The Solution section */}
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         <p
           style={{
@@ -153,9 +156,9 @@ function EdgeCaseCard({
           style={{
             fontFamily: "var(--font-geist)",
             fontSize: 15,
-            fontWeight: 500,
-            lineHeight: 1.5,
-            color: "rgba(0,0,0,0.56)",
+            fontWeight: 400,
+            lineHeight: 1.6,
+            color: "rgba(0,0,0,0.6)",
             margin: 0,
           }}
         >
@@ -168,33 +171,84 @@ function EdgeCaseCard({
 
 export default function EdgeCases() {
   const sectionRef = useRef(null);
-  const ctaRef = useRef(null);
-  const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
+  const headerInView = useInView(sectionRef, { once: true, margin: "-60px" });
+  const closingRef = useRef(null);
+  const closingInView = useInView(closingRef, { once: true, margin: "-60px" });
+
   return (
     <section
       ref={sectionRef}
-      style={{ width: "100%", backgroundColor: "#E9E8E4", padding: "60px 0 0" }}
+      style={{ width: "100%", backgroundColor: "#E9E8E4", padding: "80px 0" }}
     >
-      <div
-        style={{
-          width: "100%",
-          height: 300,
-          background:
-            "linear-gradient(180deg, #E6F9F0 0%, #8DFFB9 40%, #00C67E 60%, #00A368 100%)",
-          borderRadius: "0 0 24px 24px",
-          marginBottom: 48,
-        }}
-      />
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            type: "spring",
+            damping: 100,
+            stiffness: 240,
+            mass: 2,
+          }}
+          style={{ textAlign: "center", marginBottom: 56 }}
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: 13,
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: "rgba(0,0,0,0.4)",
+              marginBottom: 16,
+            }}
+          >
+            Challenges
+          </p>
+          <h3
+            style={{
+              fontFamily: "var(--font-degular)",
+              fontSize: 44,
+              fontWeight: 600,
+              lineHeight: 1.1,
+              letterSpacing: "-0.04em",
+              color: "#1A1A2E",
+              margin: "0 0 16px",
+            }}
+          >
+            Problems You Know Too Well
+          </h3>
+          <p
+            style={{
+              fontFamily: "var(--font-geist)",
+              fontSize: 17,
+              fontWeight: 400,
+              lineHeight: 1.5,
+              color: "rgba(0,0,0,0.6)",
+              margin: 0,
+              maxWidth: 560,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            Every healthcare provider faces these. Zavis solves them from day
+            one.
+          </p>
+        </motion.div>
+
+        {/* Cards grid */}
         <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4">
           {edgeCases.map((ec, i) => (
             <EdgeCaseCard key={i} ec={ec} index={i} />
           ))}
         </div>
+
+        {/* Closing statement */}
         <motion.div
-          ref={ctaRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={ctaInView ? { opacity: 1, y: 0 } : {}}
+          ref={closingRef}
+          initial={{ opacity: 0, y: 20 }}
+          animate={closingInView ? { opacity: 1, y: 0 } : {}}
           transition={{
             type: "spring",
             damping: 100,
@@ -203,74 +257,36 @@ export default function EdgeCases() {
             delay: 0.2,
           }}
           style={{
-            backgroundColor: "#1A1A2E",
-            borderRadius: 24,
-            padding: "48px 40px",
             textAlign: "center",
-            marginTop: 48,
-            marginBottom: 80,
+            marginTop: 64,
           }}
         >
           <h4
             style={{
               fontFamily: "var(--font-degular)",
               fontSize: 28,
-              fontWeight: 500,
-              lineHeight: 1.2,
-              letterSpacing: "-0.03em",
-              color: "#ffffff",
-              margin: 0,
-            }}
-          >
-            Traditional healthcare systems force you to choose &mdash; patient
-            experience or operational efficiency.
-          </h4>
-          <p
-            style={{
-              fontFamily: "var(--font-degular)",
-              fontSize: 20,
-              fontWeight: 700,
-              lineHeight: 1.3,
-              color: "#ffffff",
-              margin: "16px 0 0",
-            }}
-          >
-            Zavis delivers both. Every interaction automated. Every patient
-            delighted.
-          </p>
-          <p
-            style={{
-              fontFamily: "var(--font-geist)",
-              fontSize: 16,
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.5)",
-              margin: "8px 0 0",
-            }}
-          >
-            AI Powered Patient Success Platform
-          </p>
-          <a
-            href="#"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "#00C67E",
-              color: "#ffffff",
-              fontFamily: "var(--font-geist)",
-              fontSize: 15,
               fontWeight: 600,
-              borderRadius: 8,
-              padding: "0 28px",
-              height: 44,
-              marginTop: 24,
-              textDecoration: "none",
-              border: "none",
-              cursor: "pointer",
+              lineHeight: 1.3,
+              letterSpacing: "-0.02em",
+              color: "#1A1A2E",
+              margin: "0 auto",
+              maxWidth: 600,
             }}
           >
-            Book a Demo
-          </a>
+            Stop choosing between patient experience{" "}
+            <span
+              style={{
+                color: "#00C67E",
+                textDecoration: "underline",
+                textDecorationColor: "#00C67E",
+                textUnderlineOffset: "4px",
+                textDecorationThickness: "2px",
+              }}
+            >
+              and
+            </span>{" "}
+            operational efficiency.
+          </h4>
         </motion.div>
       </div>
     </section>

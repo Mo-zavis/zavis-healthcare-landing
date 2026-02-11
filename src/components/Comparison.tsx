@@ -74,7 +74,7 @@ const thStyle: React.CSSProperties = {
   textTransform: "uppercase",
   letterSpacing: "0.06em",
   color: "rgba(0,0,0,0.32)",
-  borderBottom: "1px solid rgba(0,0,0,0.08)",
+  borderBottom: "1px solid rgba(0,0,0,0.06)",
 };
 
 export default function Comparison() {
@@ -91,7 +91,7 @@ export default function Comparison() {
     >
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{
             type: "spring",
@@ -109,7 +109,7 @@ export default function Comparison() {
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.08em",
-              color: "rgba(0,0,0,0.32)",
+              color: "rgba(0,0,0,0.4)",
               marginBottom: 16,
             }}
           >
@@ -119,7 +119,7 @@ export default function Comparison() {
             style={{
               fontFamily: "var(--font-degular)",
               fontSize: 44,
-              fontWeight: 500,
+              fontWeight: 600,
               lineHeight: 1.1,
               letterSpacing: "-0.052em",
               color: "#1A1A2E",
@@ -131,7 +131,7 @@ export default function Comparison() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{
             type: "spring",
@@ -142,10 +142,10 @@ export default function Comparison() {
           }}
           style={{
             backgroundColor: "#fff",
-            borderRadius: 24,
+            borderRadius: 20,
             overflow: "hidden",
             boxShadow: cardShadow,
-            border: "1px solid rgba(0,0,0,0.08)",
+            border: "1px solid rgba(0,0,0,0.06)",
           }}
         >
           {/* Desktop table */}
@@ -163,12 +163,12 @@ export default function Comparison() {
                         gap: 8,
                       }}
                     >
-                      <svg width="32" height="32" viewBox="0 0 32 32">
+                      <svg width="28" height="28" viewBox="0 0 28 28">
                         <circle
-                          cx="16"
-                          cy="16"
-                          r="16"
-                          fill="rgba(0,0,0,0.08)"
+                          cx="14"
+                          cy="14"
+                          r="14"
+                          fill="rgba(0,0,0,0.06)"
                         />
                       </svg>
                       <span>Traditional CRM</span>
@@ -183,12 +183,12 @@ export default function Comparison() {
                         gap: 8,
                       }}
                     >
-                      <svg width="32" height="32" viewBox="0 0 32 32">
+                      <svg width="28" height="28" viewBox="0 0 28 28">
                         <circle
-                          cx="16"
-                          cy="16"
-                          r="16"
-                          fill="rgba(0,0,0,0.08)"
+                          cx="14"
+                          cy="14"
+                          r="14"
+                          fill="rgba(0,0,0,0.06)"
                         />
                       </svg>
                       <span>Manual Process</span>
@@ -203,12 +203,12 @@ export default function Comparison() {
                         gap: 8,
                       }}
                     >
-                      <svg width="32" height="32" viewBox="0 0 32 32">
+                      <svg width="28" height="28" viewBox="0 0 28 28">
                         <circle
-                          cx="16"
-                          cy="16"
-                          r="16"
-                          fill="rgba(0,0,0,0.08)"
+                          cx="14"
+                          cy="14"
+                          r="14"
+                          fill="rgba(0,0,0,0.06)"
                         />
                       </svg>
                       <span>Generic Chatbot</span>
@@ -223,11 +223,11 @@ export default function Comparison() {
                         gap: 8,
                       }}
                     >
-                      <svg width="32" height="32" viewBox="0 0 32 32">
+                      <svg width="28" height="28" viewBox="0 0 28 28">
                         <circle
-                          cx="16"
-                          cy="16"
-                          r="16"
+                          cx="14"
+                          cy="14"
+                          r="14"
                           fill="rgba(0,198,126,0.1)"
                           stroke="#00C67E"
                           strokeWidth="1.5"
@@ -245,7 +245,7 @@ export default function Comparison() {
                     style={{
                       borderBottom:
                         i < rows.length - 1
-                          ? "1px solid rgba(0,0,0,0.08)"
+                          ? "1px solid rgba(0,0,0,0.06)"
                           : "none",
                     }}
                   >
@@ -265,7 +265,7 @@ export default function Comparison() {
                         padding: 20,
                         fontFamily: "var(--font-geist)",
                         fontSize: 14,
-                        fontWeight: 500,
+                        fontWeight: 400,
                         color: "rgba(0,0,0,0.56)",
                       }}
                     >
@@ -276,7 +276,7 @@ export default function Comparison() {
                         padding: 20,
                         fontFamily: "var(--font-geist)",
                         fontSize: 14,
-                        fontWeight: 500,
+                        fontWeight: 400,
                         color: "rgba(0,0,0,0.56)",
                       }}
                     >
@@ -287,7 +287,7 @@ export default function Comparison() {
                         padding: 20,
                         fontFamily: "var(--font-geist)",
                         fontSize: 14,
-                        fontWeight: 500,
+                        fontWeight: 400,
                         color: "rgba(0,0,0,0.56)",
                       }}
                     >
@@ -300,6 +300,7 @@ export default function Comparison() {
                         fontSize: 14,
                         fontWeight: 600,
                         color: "#1A1A2E",
+                        borderLeft: "3px solid #00C67E",
                       }}
                     >
                       {row.zavis}
@@ -330,7 +331,7 @@ export default function Comparison() {
                   paddingBottom: 16,
                   borderBottom:
                     i < rows.length - 1
-                      ? "1px solid rgba(0,0,0,0.08)"
+                      ? "1px solid rgba(0,0,0,0.06)"
                       : "none",
                 }}
               >
@@ -349,7 +350,7 @@ export default function Comparison() {
                   style={{
                     fontFamily: "var(--font-geist)",
                     fontSize: 13,
-                    fontWeight: 500,
+                    fontWeight: 400,
                     color: "rgba(0,0,0,0.56)",
                     margin: 0,
                   }}
@@ -363,7 +364,7 @@ export default function Comparison() {
                   style={{
                     fontFamily: "var(--font-geist)",
                     fontSize: 13,
-                    fontWeight: 500,
+                    fontWeight: 400,
                     color: "rgba(0,0,0,0.56)",
                     margin: 0,
                   }}
@@ -375,7 +376,7 @@ export default function Comparison() {
                   style={{
                     fontFamily: "var(--font-geist)",
                     fontSize: 13,
-                    fontWeight: 500,
+                    fontWeight: 400,
                     color: "rgba(0,0,0,0.56)",
                     margin: 0,
                   }}
@@ -390,6 +391,8 @@ export default function Comparison() {
                     fontWeight: 600,
                     color: "#1A1A2E",
                     margin: 0,
+                    paddingLeft: 12,
+                    borderLeft: "3px solid #00C67E",
                   }}
                 >
                   <span style={{ color: "#00C67E" }}>Zavis:</span> {row.zavis}
@@ -415,7 +418,7 @@ export default function Comparison() {
             style={{
               fontFamily: "var(--font-geist)",
               fontSize: 16,
-              fontWeight: 500,
+              fontWeight: 400,
               lineHeight: 1.5,
               color: "rgba(0,0,0,0.56)",
               maxWidth: 700,

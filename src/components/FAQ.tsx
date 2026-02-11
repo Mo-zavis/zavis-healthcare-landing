@@ -29,10 +29,10 @@ const faqs = [
 function FAQItem({ faq }: { faq: typeof faqs[0] }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ borderBottom: "1px solid rgba(0,0,0,0.08)" }}>
+    <div style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
       <button onClick={() => setOpen(!open)}
         style={{ width: "100%", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16, padding: "24px 0", textAlign: "left", cursor: "pointer", background: "transparent", border: "none" }}>
-        <span style={{ fontFamily: "var(--font-degular)", fontSize: 20, fontWeight: 500, lineHeight: 1.3, color: "#1A1A2E", paddingRight: 16 }}>{faq.question}</span>
+        <span style={{ fontFamily: "var(--font-degular)", fontSize: 20, fontWeight: 600, lineHeight: 1.3, color: "#1A1A2E", paddingRight: 16 }}>{faq.question}</span>
         <motion.div animate={{ rotate: open ? 45 : 0 }} transition={{ duration: 0.2 }}
           style={{ flexShrink: 0, marginTop: 4, width: 24, height: 24, borderRadius: "50%", backgroundColor: "#1A1A2E", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -44,7 +44,7 @@ function FAQItem({ faq }: { faq: typeof faqs[0] }) {
       <AnimatePresence>
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3, ease: [0.44, 0, 0.56, 1] }} style={{ overflow: "hidden" }}>
-            <p style={{ fontFamily: "var(--font-geist)", paddingBottom: 24, fontSize: 15, fontWeight: 500, lineHeight: 1.6, color: "rgba(0,0,0,0.56)", maxWidth: 900, margin: 0 }}>{faq.answer}</p>
+            <p style={{ fontFamily: "var(--font-geist)", paddingBottom: 24, fontSize: 15, fontWeight: 400, lineHeight: 1.6, color: "rgba(0,0,0,0.56)", maxWidth: 900, margin: 0 }}>{faq.answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -61,10 +61,10 @@ export default function FAQ() {
       <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 32px" }}>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.2 }} style={{ textAlign: "center", marginBottom: 48 }}>
           <p style={{ fontFamily: "var(--font-inter)", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(0,0,0,0.32)", marginBottom: 16 }}>FAQ</p>
-          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1A1A2E", margin: 0 }}>Got Questions</h2>
+          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1A1A2E", margin: 0 }}>Got Questions</h2>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.35 }}
-          style={{ backgroundColor: "#fff", borderRadius: 24, padding: "8px 24px", boxShadow: cardShadow, border: "1px solid rgba(0,0,0,0.08)" }}>
+          style={{ backgroundColor: "#fff", borderRadius: 24, padding: "8px 24px", boxShadow: cardShadow, border: "1px solid rgba(0,0,0,0.06)" }}>
           {faqs.map((faq, i) => <FAQItem key={i} faq={faq} />)}
         </motion.div>
       </div>
