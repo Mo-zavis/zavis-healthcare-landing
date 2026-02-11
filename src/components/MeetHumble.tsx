@@ -21,7 +21,7 @@ export default function MeetHumble() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} style={{ width: "100%", backgroundColor: "#fafafa", padding: "60px 0 80px" }}>
+    <section ref={ref} style={{ width: "100%", backgroundColor: "#F1F0EC", padding: "60px 0 80px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,11 +29,11 @@ export default function MeetHumble() {
           transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.2 }}
           style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 24 }}
         >
-          <p style={{ fontFamily: "var(--font-inter)", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#ff4000", margin: 0 }}>
-            Meet Humble
+          <p style={{ fontFamily: "var(--font-inter)", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#00C67E", margin: 0 }}>
+            Meet Zavis
           </p>
-          <h3 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1c1c1c", margin: 0 }}>
-            Your On Demand Factory Software,<br />Delivered Overnight.
+          <h3 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1A1A2E", margin: 0 }}>
+            Your 24/7 AI Healthcare Assistant,<br />Always On.
           </h3>
         </motion.div>
 
@@ -44,10 +44,10 @@ export default function MeetHumble() {
           style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 24, marginTop: 32 }}
         >
           <p style={{ fontFamily: "var(--font-geist)", fontSize: 16, fontWeight: 500, lineHeight: 1.5, color: "rgba(0,0,0,0.56)", textAlign: "center", margin: 0, maxWidth: 700 }}>
-            Your ERP stays running. Your MES keeps humming. Humble connects them all. Or retires them. Your choice.
+            Zavis doesn&apos;t replace your team &mdash; it supercharges them. Every missed call becomes a booked appointment. Every WhatsApp message gets an instant, intelligent response. Every patient interaction is captured, organized, and actionable.
           </p>
           <p style={{ fontFamily: "var(--font-geist)", fontSize: 16, fontWeight: 500, lineHeight: 1.5, color: "rgba(0,0,0,0.56)", textAlign: "center", margin: 0, maxWidth: 700 }}>
-            Not another rip-and-replace nightmare. Humble works alongside your existing systems, fixing your biggest pain first&mdash;whether that&apos;s scheduling chaos, quality tracking, or black holes in your data. Start small, prove value, expand when ready.
+            No rip-and-replace. Zavis plugs into your existing EMR, works alongside your staff, and starts delivering value from day one. Start with one department, prove the ROI, expand when ready.
           </p>
         </motion.div>
 
@@ -55,10 +55,10 @@ export default function MeetHumble() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ type: "spring", damping: 80, stiffness: 300, mass: 2, delay: 0.5 }}
-          style={{ marginTop: 48, borderRadius: 24, overflow: "hidden", backgroundColor: "#fff", boxShadow: cardShadow, border: "3px solid #1e1e1e" }}
+          style={{ marginTop: 48, borderRadius: 24, overflow: "hidden", backgroundColor: "#fff", boxShadow: cardShadow, border: "3px solid #1A1A2E" }}
         >
           <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
-            <VideoPlaceholder label="Product Demo" />
+            <VideoPlaceholder label="Platform Overview" />
           </div>
         </motion.div>
       </div>

@@ -57,19 +57,21 @@
   --font-geist: 'Geist', system-ui, -apple-system, sans-serif;
   --font-inter: 'Inter', sans-serif;
 
-  --color-bg-primary: #fafafa;
-  --color-bg-warm: #f6f5f3;
-  --color-bg-warm-alt: #ecebe8;
+  --color-bg-primary: #F1F0EC;
+  --color-bg-warm: #E9E8E4;
+  --color-bg-warm-alt: #DDDBD6;
   --color-white: #ffffff;
   --color-black: #000000;
-  --color-accent: #ff4000;
-  --color-heading: #1e1e1e;
+  --color-accent: #00C67E;
+  --color-accent-dark: #00A368;
+  --color-accent-light: #E6F9F0;
+  --color-heading: #1A1A2E;
   --color-heading-alt: #1c1c1c;
   --color-text-muted: rgba(0, 0, 0, 0.56);
   --color-text-secondary: rgba(0, 0, 0, 0.48);
   --color-text-subtle: rgba(0, 0, 0, 0.32);
-  --color-border: rgba(0, 0, 0, 0.12);
-  --color-border-medium: rgba(0, 0, 0, 0.15);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-medium: rgba(0, 0, 0, 0.12);
   --color-border-btn: rgba(0, 0, 0, 0.15);
 }
 
@@ -82,7 +84,7 @@
 
   body {
     font-family: var(--font-geist);
-    background-color: var(--color-bg-primary);
+    background-color: #F1F0EC;
     color: var(--color-black);
     overflow-x: hidden;
   }
@@ -94,7 +96,7 @@
   }
 
   a:hover {
-    color: var(--color-accent);
+    color: #00C67E;
   }
 
   ::-webkit-scrollbar {

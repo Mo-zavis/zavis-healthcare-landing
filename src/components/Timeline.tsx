@@ -5,24 +5,24 @@ import { motion, useInView } from "framer-motion";
 
 const steps = [
   {
-    label: "DAY 1–2",
-    title: "Pick one Bottleneck",
-    body: "Your Subject Matter Experts design the workflow; operators show the actual steps on the floor.",
+    label: "DAY 1-2",
+    title: "Connect & Configure",
+    body: "We plug into your EMR, set up your AI receptionist, and configure patient intake flows for your first department.",
   },
   {
     label: "DAY 3",
-    title: "First Workflow live",
-    body: "For that bottleneck (on real work).",
+    title: "First AI Agent Live",
+    body: "Your AI receptionist starts handling calls and WhatsApp messages. Patients book appointments 24/7.",
   },
   {
-    label: "DAY 4–10",
-    title: "Daily releases",
-    body: "Operators test on the floor; Humble\u2019s agents ship overnight fixes and improvements.",
+    label: "DAY 4-10",
+    title: "Optimize & Expand",
+    body: "Real patient interactions train the system daily. Add follow-up automation, analytics dashboards, and additional departments.",
   },
   {
-    label: "DAY 11",
-    title: "Go-live + stabilization",
-    body: "Queue the next workflows.",
+    label: "DAY 11-14",
+    title: "Full Deployment",
+    body: "Complete rollout across all configured departments. Staff trained, data flowing, ROI measurable.",
   },
 ];
 
@@ -43,12 +43,12 @@ function TimelineStep({ step, index }: { step: typeof steps[0]; index: number })
       {/* Dot */}
       <div
         className="absolute left-[10px] md:left-1/2 md:-translate-x-1/2"
-        style={{ top: 6, width: 13, height: 13, borderRadius: "50%", backgroundColor: "#ff4000", zIndex: 10 }}
+        style={{ top: 6, width: 13, height: 13, borderRadius: "50%", backgroundColor: "#00C67E", zIndex: 10 }}
       />
 
       {/* Label side */}
       <div className={`md:w-1/2 ${index % 2 === 0 ? "md:text-right md:pr-10" : "md:text-left md:pl-10"}`}>
-        <span style={{ fontFamily: "var(--font-inter)", display: "inline-block", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#ff4000", marginBottom: 4 }}>
+        <span style={{ fontFamily: "var(--font-inter)", display: "inline-block", fontSize: 12, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#00C67E", marginBottom: 4 }}>
           {step.label}
         </span>
       </div>
@@ -67,7 +67,7 @@ export default function Timeline() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} style={{ width: "100%", backgroundColor: "#000", color: "#fff", padding: "60px 0 80px" }}>
+    <section ref={ref} style={{ width: "100%", backgroundColor: "#1A1A2E", color: "#fff", padding: "60px 0 80px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -79,10 +79,10 @@ export default function Timeline() {
             Zero Risk, All Upside
           </p>
           <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#fff", margin: 0 }}>
-            Forget million-dollar IT projects.
+            Forget 6-month IT projects.
           </h2>
           <p style={{ fontFamily: "var(--font-degular)", fontSize: 18, fontWeight: 500, color: "rgba(255,255,255,0.5)", marginTop: 16 }}>
-            What the 2 weeks looks like with humble
+            What 2 weeks looks like with Zavis
           </p>
         </motion.div>
 

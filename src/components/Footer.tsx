@@ -1,8 +1,12 @@
 "use client";
 
-const HumbleLogoMark = () => (
-  <svg viewBox="0 0 24 10.909" width="20" height="9" style={{ flexShrink: 0 }}>
-    <path d="M 6.545 0 L 10.909 0 L 10.909 4.364 L 6.545 4.364 Z M 4.364 6.545 L 4.364 4.364 L 6.545 4.364 L 6.545 6.545 L 10.909 6.545 L 10.909 4.364 L 13.091 4.364 L 13.091 6.545 L 17.455 6.545 L 17.455 4.364 L 13.091 4.364 L 13.091 0 L 17.455 0 L 17.455 4.364 L 19.636 4.364 L 19.636 6.545 L 17.455 6.545 L 17.455 10.909 L 13.091 10.909 L 13.091 6.545 L 10.909 6.545 L 10.909 10.909 L 6.545 10.909 L 6.545 6.545 L 4.364 6.545 Z M 0 4.364 L 4.364 4.364 L 4.364 0 L 0 0 Z M 19.636 0 L 24 0 L 24 4.364 L 19.636 4.364 Z" fill="currentColor" />
+const ZavisLogoMark = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" style={{ flexShrink: 0 }}>
+    <rect width="24" height="24" rx="6" fill="#00C67E" />
+    <path
+      d="M6 7.5H18V9.5H10.5L18 16.5V18.5H6V16.5H13.5L6 9.5V7.5Z"
+      fill="#fff"
+    />
   </svg>
 );
 
@@ -20,55 +24,172 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const footerLinks = [
+const companyLinks = [
   { label: "About us", href: "#about" },
+  { label: "Careers", href: "#careers" },
+  { label: "Contact", href: "#contact" },
+];
+
+const productLinks = [
+  { label: "Platform", href: "#platform" },
+  { label: "Integrations", href: "#integrations" },
+  { label: "Security", href: "#security" },
 ];
 
 export default function Footer() {
   return (
-    <footer style={{ width: "100%", backgroundColor: "#fafafa", paddingTop: 40, paddingBottom: 32, borderTop: "1px solid rgba(0,0,0,0.12)" }}>
+    <footer
+      style={{
+        width: "100%",
+        backgroundColor: "#F1F0EC",
+        paddingTop: 40,
+        paddingBottom: 32,
+        borderTop: "1px solid rgba(0,0,0,0.08)",
+      }}
+    >
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
-        <div className="flex flex-col md:flex-row md:items-center justify-between" style={{ gap: 32, alignItems: "flex-start" }}>
+        <div
+          className="flex flex-col md:flex-row md:items-start justify-between"
+          style={{ gap: 32 }}
+        >
           {/* Left: Logo + tagline */}
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <HumbleLogoMark />
-              <span style={{ fontFamily: "var(--font-degular)", fontSize: 16, fontWeight: 700, letterSpacing: "-0.03em", color: "#000" }}>
-                humble
+              <ZavisLogoMark />
+              <span
+                style={{
+                  fontFamily: "var(--font-degular)",
+                  fontSize: 16,
+                  fontWeight: 700,
+                  letterSpacing: "-0.03em",
+                  color: "#1A1A2E",
+                }}
+              >
+                zavis
               </span>
             </div>
-            <p style={{ fontFamily: "var(--font-geist)", fontSize: 14, fontWeight: 500, color: "rgba(0,0,0,0.56)", margin: 0 }}>
-              On Demand Factory OS, Delivered Overnight
+            <p
+              style={{
+                fontFamily: "var(--font-geist)",
+                fontSize: 14,
+                fontWeight: 500,
+                color: "rgba(0,0,0,0.56)",
+                margin: 0,
+              }}
+            >
+              AI Powered Patient Success Platform
             </p>
           </div>
 
-          {/* Right: Links */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <span style={{ fontFamily: "var(--font-inter)", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(0,0,0,0.32)" }}>
-              Company
-            </span>
-            <div style={{ display: "flex", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-              {footerLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  style={{ fontFamily: "var(--font-inter)", fontSize: 14, fontWeight: 500, color: "rgba(0,0,0,0.56)", textDecoration: "none", transition: "color 0.2s" }}
-                >
-                  {link.label}
-                </a>
-              ))}
+          {/* Right: Link columns */}
+          <div className="flex flex-row" style={{ gap: 64 }}>
+            {/* Company links */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <span
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  color: "rgba(0,0,0,0.32)",
+                }}
+              >
+                Company
+              </span>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
+                {companyLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      fontSize: 14,
+                      fontWeight: 500,
+                      color: "rgba(0,0,0,0.56)",
+                      textDecoration: "none",
+                      transition: "color 0.2s",
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Product links */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <span
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.08em",
+                  color: "rgba(0,0,0,0.32)",
+                }}
+              >
+                Product
+              </span>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 10,
+                }}
+              >
+                {productLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    style={{
+                      fontFamily: "var(--font-inter)",
+                      fontSize: 14,
+                      fontWeight: 500,
+                      color: "rgba(0,0,0,0.56)",
+                      textDecoration: "none",
+                      transition: "color 0.2s",
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between" style={{ gap: 16, marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(0,0,0,0.12)", alignItems: "flex-start" }}>
-          <p style={{ fontFamily: "var(--font-inter)", fontSize: 13, fontWeight: 500, color: "rgba(0,0,0,0.32)", margin: 0 }}>
-            &copy; 2025 Humble Operations Corp.
+        <div
+          className="flex flex-col md:flex-row md:items-center justify-between"
+          style={{
+            gap: 16,
+            marginTop: 32,
+            paddingTop: 24,
+            borderTop: "1px solid rgba(0,0,0,0.08)",
+            alignItems: "flex-start",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: 13,
+              fontWeight: 500,
+              color: "rgba(0,0,0,0.32)",
+              margin: 0,
+            }}
+          >
+            &copy; 2025 Zavis Healthcare Pvt. Ltd.
           </p>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <a
-              href="https://x.com/humbleopscorp"
+              href="https://x.com/zavishealthcare"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "rgba(0,0,0,0.32)", transition: "color 0.2s" }}
@@ -77,7 +198,7 @@ export default function Footer() {
               <XIcon />
             </a>
             <a
-              href="https://www.linkedin.com/company/humbleops/"
+              href="https://www.linkedin.com/company/zavishealthcare/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "rgba(0,0,0,0.32)", transition: "color 0.2s" }}

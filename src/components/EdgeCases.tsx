@@ -4,33 +4,163 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const edgeCases = [
-  { category: "MES", problem: "Machine capability degrades mid-run. First 500 parts at 100% speed, next 300 at 70% speed due to tooling wear. System expects uniform cycle time. Your actual costs and scheduling are now fiction.", solution: "Track variable run rates within single work orders. Automatically adjust scheduling when equipment degrades. Real cost-per-part based on actual machine performance, not theoretical standards." },
-  { category: "WMS", problem: "Customer returns partial shipment - some parts damaged, some wrong, some fine but need rework. System can only receive all or nothing. You\u2019re tracking three different dispositions on paper while inventory is completely wrong.", solution: "Receive returns with multiple dispositions in one transaction. Route damaged to scrap, wrong parts to return vendor, good parts to rework queue. Inventory stays accurate through the entire mess." },
-  { category: "ERP / Costing", problem: "Customer returns material for credit, but it\u2019s already partially processed. ERP can\u2019t handle partial returns with value-add. You track it offline, miss the credit, or just eat the cost.", solution: "Define reverse workflows with partial processing states. Calculate accurate credits including your value-add. Handle the messy reality of customer changes." },
-  { category: "QMS", problem: "Customer spec says \u00b10.005\" but their receiving inspects to \u00b10.003\". You know this. Your operators know this. The system doesn\u2019t. Quality passes parts that will get rejected.", solution: "Capture real customer requirements, not just paper specs. Track internal knowledge like \u201cCustomer X always measures differently.\u201d Build inspection criteria that match reality, not theory." },
-  { category: "Spreadsheets", problem: "Prototype runs with borrowed inventory. R&D \u201cborrows\u201d parts without paperwork. Inventory counts never match. Finance asks why. You point to seventeen spreadsheets.", solution: "Create exception workflows for prototypes and R&D pulls. Track borrowed inventory properly. Stop explaining the same variances every month." },
-  { category: "Paper", problem: "Swing shift has different procedures that work better. Day shift doesn\u2019t know. Night shift does their own thing. Three ways to make the same part, all undocumented.", solution: "Capture each shift\u2019s actual method. Compare performance data. Promote best practices across shifts\u2014or keep variations when they make sense for different crews." },
+  {
+    category: "Scheduling",
+    problem:
+      "Patients call during peak hours and get voicemail. They hang up, book with a competitor. Your front desk is overwhelmed, and your no-show rate keeps climbing because reminder calls happen when staff remembers.",
+    solution:
+      "AI receptionist handles unlimited concurrent calls. Patients book 24/7 via WhatsApp or voice. Automated reminders cut no-shows by up to 40%. Your front desk focuses on in-person care.",
+  },
+  {
+    category: "Patient Intake",
+    problem:
+      "New patients arrive and spend 20 minutes filling paper forms. Data gets manually entered \u2014 often with errors. Insurance details are missing. The doctor\u2019s running behind before the first appointment even starts.",
+    solution:
+      "Patients complete digital intake on WhatsApp before arrival. Demographics, ID photos, insurance cards \u2014 all captured and verified automatically. Zero manual entry, zero waiting room bottleneck.",
+  },
+  {
+    category: "Follow-Ups",
+    problem:
+      "Post-discharge follow-ups depend on someone remembering to call. Fertility patients miss cycle windows because reminders weren\u2019t sent. Pharmacy patients run out of medication because refill alerts don\u2019t exist.",
+    solution:
+      "Automated care journeys trigger based on visit type. Discharge follow-ups, cycle-based reminders, refill alerts \u2014 all personalized, all on time, all tracked for compliance.",
+  },
+  {
+    category: "Records & EMR",
+    problem:
+      "Patient data lives in three systems that don\u2019t talk to each other. Front desk enters demographics into the EMR. Billing enters payments into their system. Marketing has a separate CRM. Nobody has the full picture.",
+    solution:
+      "Zavis syncs bidirectionally with your EMR \u2014 M@DAS, Practo, Unite, Helix. One patient record across all touchpoints. No duplicate entries, no data silos, no reconciliation.",
+  },
+  {
+    category: "Communication",
+    problem:
+      "Patients WhatsApp the clinic but nobody monitors it consistently. Email goes unread. SMS feels impersonal. Each channel is a separate silo with no shared context about the patient.",
+    solution:
+      "Every channel \u2014 WhatsApp, voice, SMS, web \u2014 feeds into one unified inbox. AI handles routine queries instantly. Complex cases route to the right person with full context preserved.",
+  },
+  {
+    category: "Analytics",
+    problem:
+      "You know you\u2019re busy, but you can\u2019t quantify it. How many patients called and didn\u2019t book? What\u2019s your average response time? Which campaigns actually drive appointments? The data exists somewhere, in theory.",
+    solution:
+      "Real-time dashboards with conversation heatmaps, response times, booking conversion rates, campaign ROI, and CSAT scores. Make decisions from data, not gut feel.",
+  },
 ];
 
-const cardShadow = "0px 0.71px 0.71px -0.42px rgba(0,0,0,0.03), 0px 1.81px 1.81px -0.83px rgba(0,0,0,0.03), 0px 3.62px 3.62px -1.25px rgba(0,0,0,0.03), 0px 6.87px 6.87px -1.67px rgba(0,0,0,0.03), 0px 13.65px 13.65px -2.08px rgba(0,0,0,0.03), 0px 30px 30px -2.5px rgba(0,0,0,0.03)";
+const cardShadow =
+  "0px 0.71px 0.71px -0.42px rgba(0,0,0,0.03), 0px 1.81px 1.81px -0.83px rgba(0,0,0,0.03), 0px 3.62px 3.62px -1.25px rgba(0,0,0,0.03), 0px 6.87px 6.87px -1.67px rgba(0,0,0,0.03), 0px 13.65px 13.65px -2.08px rgba(0,0,0,0.03), 0px 30px 30px -2.5px rgba(0,0,0,0.03)";
 
-function EdgeCaseCard({ ec, index }: { ec: typeof edgeCases[0]; index: number }) {
+function EdgeCaseCard({
+  ec,
+  index,
+}: {
+  ec: (typeof edgeCases)[0];
+  index: number;
+}) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.1 * (index % 2) }}
-      style={{ backgroundColor: "#fff", borderRadius: 24, padding: 32, display: "flex", flexDirection: "column", gap: 20, boxShadow: cardShadow, border: "1px solid rgba(0,0,0,0.12)" }}>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{
+        type: "spring",
+        damping: 100,
+        stiffness: 240,
+        mass: 2,
+        delay: 0.1 * (index % 2),
+      }}
+      style={{
+        backgroundColor: "#fff",
+        borderRadius: 24,
+        padding: 32,
+        display: "flex",
+        flexDirection: "column",
+        gap: 20,
+        boxShadow: cardShadow,
+        border: "1px solid rgba(0,0,0,0.08)",
+      }}
+    >
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        <span style={{ fontFamily: "var(--font-inter)", display: "inline-block", width: "fit-content", padding: "4px 10px", borderRadius: 4, backgroundColor: "rgba(0,0,0,0.04)", fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(0,0,0,0.4)" }}>
+        <span
+          style={{
+            fontFamily: "var(--font-inter)",
+            display: "inline-block",
+            width: "fit-content",
+            padding: "4px 10px",
+            borderRadius: 4,
+            backgroundColor: "rgba(0,0,0,0.04)",
+            fontSize: 11,
+            fontWeight: 700,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            color: "rgba(0,0,0,0.4)",
+          }}
+        >
           {ec.category}
         </span>
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "rgba(0,0,0,0.32)", margin: 0 }}>Today</p>
-        <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, lineHeight: 1.5, color: "#1c1c1c", fontWeight: 500, fontStyle: "italic", margin: 0 }}>&ldquo;{ec.problem}&rdquo;</p>
+        <p
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: 12,
+            fontWeight: 600,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            color: "rgba(0,0,0,0.32)",
+            margin: 0,
+          }}
+        >
+          Today
+        </p>
+        <p
+          style={{
+            fontFamily: "var(--font-geist)",
+            fontSize: 15,
+            lineHeight: 1.5,
+            color: "#1A1A2E",
+            fontWeight: 500,
+            fontStyle: "italic",
+            margin: 0,
+          }}
+        >
+          &ldquo;{ec.problem}&rdquo;
+        </p>
       </div>
-      <div style={{ width: "100%", height: 1, backgroundColor: "rgba(0,0,0,0.12)" }} />
+      <div
+        style={{
+          width: "100%",
+          height: 1,
+          backgroundColor: "rgba(0,0,0,0.08)",
+        }}
+      />
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: "#ff4000", margin: 0 }}>With Humble</p>
-        <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 500, lineHeight: 1.5, color: "rgba(0,0,0,0.56)", margin: 0 }}>{ec.solution}</p>
+        <p
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: 12,
+            fontWeight: 600,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            color: "#00C67E",
+            margin: 0,
+          }}
+        >
+          With Zavis
+        </p>
+        <p
+          style={{
+            fontFamily: "var(--font-geist)",
+            fontSize: 15,
+            fontWeight: 500,
+            lineHeight: 1.5,
+            color: "rgba(0,0,0,0.56)",
+            margin: 0,
+          }}
+        >
+          {ec.solution}
+        </p>
       </div>
     </motion.div>
   );
@@ -41,25 +171,39 @@ export default function EdgeCases() {
   const ctaRef = useRef(null);
   const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
   return (
-    <section ref={sectionRef} style={{ width: "100%", backgroundColor: "#f6f5f3", padding: "60px 0 0" }}>
-      <div style={{
-        width: "100%",
-        height: 300,
-        background: "linear-gradient(180deg, #87CEEB 0%, #90c695 40%, #5a8a5e 60%, #3d6b42 100%)",
-        borderRadius: "0 0 24px 24px",
-        marginBottom: 48,
-      }} />
+    <section
+      ref={sectionRef}
+      style={{ width: "100%", backgroundColor: "#E9E8E4", padding: "60px 0 0" }}
+    >
+      <div
+        style={{
+          width: "100%",
+          height: 300,
+          background:
+            "linear-gradient(180deg, #E6F9F0 0%, #8DFFB9 40%, #00C67E 60%, #00A368 100%)",
+          borderRadius: "0 0 24px 24px",
+          marginBottom: 48,
+        }}
+      />
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4">
-          {edgeCases.map((ec, i) => <EdgeCaseCard key={i} ec={ec} index={i} />)}
+          {edgeCases.map((ec, i) => (
+            <EdgeCaseCard key={i} ec={ec} index={i} />
+          ))}
         </div>
         <motion.div
           ref={ctaRef}
           initial={{ opacity: 0, y: 30 }}
           animate={ctaInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.2 }}
+          transition={{
+            type: "spring",
+            damping: 100,
+            stiffness: 240,
+            mass: 2,
+            delay: 0.2,
+          }}
           style={{
-            backgroundColor: "#1e1e1e",
+            backgroundColor: "#1A1A2E",
             borderRadius: 24,
             padding: "48px 40px",
             textAlign: "center",
@@ -67,35 +211,43 @@ export default function EdgeCases() {
             marginBottom: 80,
           }}
         >
-          <h4 style={{
-            fontFamily: "var(--font-degular)",
-            fontSize: 28,
-            fontWeight: 500,
-            lineHeight: 1.2,
-            letterSpacing: "-0.03em",
-            color: "#ffffff",
-            margin: 0,
-          }}>
-            Conventional ERPs/MES/etc force you to ignore the 5% edge cases&mdash;or patch with spreadsheets.
+          <h4
+            style={{
+              fontFamily: "var(--font-degular)",
+              fontSize: 28,
+              fontWeight: 500,
+              lineHeight: 1.2,
+              letterSpacing: "-0.03em",
+              color: "#ffffff",
+              margin: 0,
+            }}
+          >
+            Traditional healthcare systems force you to choose &mdash; patient
+            experience or operational efficiency.
           </h4>
-          <p style={{
-            fontFamily: "var(--font-degular)",
-            fontSize: 20,
-            fontWeight: 700,
-            lineHeight: 1.3,
-            color: "#ffffff",
-            margin: "16px 0 0",
-          }}>
-            But Your Edge Cases <em>ARE</em> YOUR BUSINESS. Humble makes them standard work.
+          <p
+            style={{
+              fontFamily: "var(--font-degular)",
+              fontSize: 20,
+              fontWeight: 700,
+              lineHeight: 1.3,
+              color: "#ffffff",
+              margin: "16px 0 0",
+            }}
+          >
+            Zavis delivers both. Every interaction automated. Every patient
+            delighted.
           </p>
-          <p style={{
-            fontFamily: "var(--font-geist)",
-            fontSize: 16,
-            fontWeight: 500,
-            color: "rgba(255,255,255,0.5)",
-            margin: "8px 0 0",
-          }}>
-            The Factory OS That Grows With You
+          <p
+            style={{
+              fontFamily: "var(--font-geist)",
+              fontSize: 16,
+              fontWeight: 500,
+              color: "rgba(255,255,255,0.5)",
+              margin: "8px 0 0",
+            }}
+          >
+            AI Powered Patient Success Platform
           </p>
           <a
             href="#"
@@ -103,7 +255,7 @@ export default function EdgeCases() {
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: "#22c55e",
+              backgroundColor: "#00C67E",
               color: "#ffffff",
               fontFamily: "var(--font-geist)",
               fontSize: 15,
@@ -117,7 +269,7 @@ export default function EdgeCases() {
               cursor: "pointer",
             }}
           >
-            See if You&apos;re a Right Fit
+            Book a Demo
           </a>
         </motion.div>
       </div>

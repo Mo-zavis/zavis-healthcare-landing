@@ -5,48 +5,48 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const tabs = [
   {
-    label: "Shop Floor",
-    title: "Shop Floor Operations",
-    subtitle: "No prompts or \u2018learning AI\u2019\u2014just the next step. Most folks ramp in ~15 minutes.",
+    label: "Front Desk",
+    title: "Front Desk & Reception",
+    subtitle: "No more juggling phones, WhatsApp, and paper forms \u2014 everything in one view.",
     features: [
-      { title: "Just Tell Me What\u2019s Next", body: "Clear task lists, not three systems and a whiteboard. Step-by-step work instructions that make sense. No hunting for the right version of the SOP or the traveling paperwork." },
-      { title: "Your Setup, Your Way", body: "Document what actually works without writing novels. Access machine manuals instantly when something\u2019s wrong. Share fixes with next shift without explaining everything twice." },
+      { title: "Instant Patient Intake", body: "Patients fill forms on WhatsApp before they arrive. Demographics, ID photos, insurance details \u2014 all captured automatically. No clipboard, no waiting room bottleneck." },
+      { title: "Smart Queue Management", body: "Real-time queue updates sent to patients. Department routing happens automatically. Walk-ins and appointments merge seamlessly." },
     ],
   },
   {
-    label: "Planners",
-    title: "Planners & Process Engineers",
-    subtitle: "Build and adjust schedules that reflect your actual constraints\u2014not theoretical ones.",
+    label: "Doctors",
+    title: "Doctors & Clinicians",
+    subtitle: "Spend time with patients, not screens.",
     features: [
-      { title: "Scheduling That Adapts", body: "A dynamic engine that understands your exact constraints\u2014tools, crews, materials, deadlines\u2014and adapts in real time. No more fighting with static Gantt charts." },
-      { title: "Process Visibility", body: "See what\u2019s actually happening on the floor, not what was planned three weeks ago. Real data, real-time, from the people doing the work." },
+      { title: "Pre-Visit Intelligence", body: "See complete patient context before they walk in \u2014 previous visits, medications, chief complaints, and AI-summarized intake notes." },
+      { title: "Follow-Up Automation", body: "Post-visit care plans trigger automatically. Medication reminders, test result notifications, and check-in messages \u2014 all handled by Zavis." },
     ],
   },
   {
-    label: "Quality",
-    title: "Quality & Compliance",
-    subtitle: "Capture quality data as work happens\u2014not after the fact on paper forms.",
+    label: "Patients",
+    title: "Patient Experience",
+    subtitle: "Healthcare that meets patients where they already are \u2014 on WhatsApp.",
     features: [
-      { title: "Built-In Quality Checks", body: "Inspection criteria that match reality, not theory. Operators can\u2019t skip steps. Photos, measurements, and sign-offs captured in the flow of work." },
-      { title: "Audit-Ready Always", body: "Every action timestamped, every decision traceable. Pull compliance reports in seconds, not days. No more scrambling before audits." },
+      { title: "Book in 30 Seconds", body: "No app downloads, no portals. Patients book, reschedule, or ask questions right from WhatsApp \u2014 24/7, with instant AI responses." },
+      { title: "Never Miss a Follow-Up", body: "Cycle-based reminders for fertility, prescription refill alerts for pharmacy, discharge follow-ups for hospitals \u2014 all automated, all personalized." },
     ],
   },
   {
-    label: "Plant Ops",
-    title: "Plant / Ops Leaders",
-    subtitle: "One dashboard that tells the truth about your operation\u2014no spreadsheet archaeology.",
+    label: "Admin",
+    title: "Admin & Operations",
+    subtitle: "Finally \u2014 clean data and zero manual re-entry.",
     features: [
-      { title: "Real-Time Visibility", body: "See production status, quality metrics, and scheduling accuracy in one place. No more walking the floor to find out what\u2019s happening." },
-      { title: "Data-Driven Decisions", body: "Actual cost-per-part, real cycle times, true yield rates. Make investment decisions based on data, not gut feel." },
+      { title: "Unified Patient Records", body: "Every interaction across every channel feeds into one clean record. No duplicate entries, no data silos, no reconciliation headaches." },
+      { title: "Revenue Cycle Clarity", body: "Track payments, insurance claims, and outstanding balances in real time. Automated payment reminders reduce collection cycles." },
     ],
   },
   {
-    label: "Executive",
-    title: "Executive / Management",
-    subtitle: "Finally\u2014a technology investment that proves value in days, not fiscal years.",
+    label: "Management",
+    title: "Management & Leadership",
+    subtitle: "Make decisions from data, not gut feel.",
     features: [
-      { title: "Measurable ROI in Weeks", body: "No more million-dollar bets on software that takes two years to implement. See measurable results from the first sprint. Expand only what works." },
-      { title: "Strategic Advantage", body: "While competitors spend 18 months on ERP upgrades, you\u2019re iterating daily. Your operations learn and improve every single day." },
+      { title: "Real-Time Analytics", body: "Conversation heatmaps, first response times, AI agent close rates, CSAT scores \u2014 all in one dashboard." },
+      { title: "Growth Intelligence", body: "Campaign ROI tracking, rebook conversion rates, department-level performance \u2014 see exactly where to invest next." },
     ],
   },
 ];
@@ -59,7 +59,7 @@ export default function OneTruth() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} style={{ width: "100%", backgroundColor: "#f6f5f3", padding: "60px 0 80px" }}>
+    <section ref={ref} style={{ width: "100%", backgroundColor: "#E9E8E4", padding: "60px 0 80px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -67,8 +67,8 @@ export default function OneTruth() {
           transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.2 }}
           style={{ textAlign: "center", marginBottom: 48 }}
         >
-          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1c1c1c", margin: 0 }}>
-            One truth everyone actually trusts:
+          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#1A1A2E", margin: 0 }}>
+            One platform every team trusts
           </h2>
         </motion.div>
 
@@ -93,7 +93,7 @@ export default function OneTruth() {
                 border: "none",
                 transition: "all 0.3s",
                 backgroundColor: active === i ? "#fff" : "transparent",
-                color: active === i ? "#000" : "rgba(0,0,0,0.56)",
+                color: active === i ? "#1A1A2E" : "rgba(0,0,0,0.56)",
                 boxShadow: active === i ? "0 1px 3px rgba(0,0,0,0.08)" : "none",
               }}
             >
@@ -120,7 +120,7 @@ export default function OneTruth() {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
               <div>
-                <h3 style={{ fontFamily: "var(--font-degular)", fontSize: 32, fontWeight: 500, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1c1c1c", margin: 0 }}>
+                <h3 style={{ fontFamily: "var(--font-degular)", fontSize: 32, fontWeight: 500, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1A1A2E", margin: 0 }}>
                   {tabs[active].title}
                 </h3>
                 <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 500, lineHeight: 1.4, color: "rgba(0,0,0,0.56)", marginTop: 8 }}>
@@ -132,7 +132,7 @@ export default function OneTruth() {
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <button
                   onClick={() => setActive(Math.max(0, active - 1))}
-                  style={{ width: 35, height: 35, borderRadius: "50%", backgroundColor: "#000", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", border: "none" }}
+                  style={{ width: 35, height: 35, borderRadius: "50%", backgroundColor: "#1A1A2E", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", border: "none" }}
                   aria-label="Previous"
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2.5L4 6L7.5 9.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -142,7 +142,7 @@ export default function OneTruth() {
                 </span>
                 <button
                   onClick={() => setActive(Math.min(tabs.length - 1, active + 1))}
-                  style={{ width: 35, height: 35, borderRadius: "50%", backgroundColor: "#000", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", border: "none" }}
+                  style={{ width: 35, height: 35, borderRadius: "50%", backgroundColor: "#1A1A2E", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", border: "none" }}
                   aria-label="Next"
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4.5 2.5L8 6L4.5 9.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -153,7 +153,7 @@ export default function OneTruth() {
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, marginTop: 16 }}>
                 {tabs[active].features.map((feat) => (
                   <div key={feat.title} style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                    <h4 style={{ fontFamily: "var(--font-degular)", fontSize: 23, fontWeight: 500, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1c1c1c", margin: 0 }}>
+                    <h4 style={{ fontFamily: "var(--font-degular)", fontSize: 23, fontWeight: 500, lineHeight: 1.2, letterSpacing: "-0.03em", color: "#1A1A2E", margin: 0 }}>
                       {feat.title}
                     </h4>
                     <p style={{ fontFamily: "var(--font-geist)", fontSize: 15, fontWeight: 500, lineHeight: 1.5, color: "rgba(0,0,0,0.56)", margin: 0 }}>

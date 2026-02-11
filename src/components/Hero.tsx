@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const spring = { type: "spring" as const, damping: 100, stiffness: 240, mass: 2 };
@@ -9,7 +10,7 @@ const VideoPlaceholder = ({ label }: { label: string }) => (
     style={{
       width: "100%",
       height: "100%",
-      backgroundColor: "#e8e6e3",
+      backgroundColor: "#E9E8E4",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -44,7 +45,7 @@ const ImagePlaceholder = ({ label, style }: { label: string; style?: React.CSSPr
     style={{
       width: "100%",
       height: "100%",
-      backgroundColor: "#f0ede9",
+      backgroundColor: "#E6F9F0",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -53,13 +54,13 @@ const ImagePlaceholder = ({ label, style }: { label: string; style?: React.CSSPr
     }}
   >
     <div style={{ textAlign: "center" }}>
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.15 }}>
-        <rect x="2" y="2" width="20" height="20" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="8.5" cy="8.5" r="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M2 17L7 12L12 17" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.2 }}>
+        <rect x="2" y="2" width="20" height="20" rx="2" stroke="#00C67E" strokeWidth="1.5" />
+        <circle cx="8.5" cy="8.5" r="2" stroke="#00C67E" strokeWidth="1.5" />
+        <path d="M2 17L7 12L12 17" stroke="#00C67E" strokeWidth="1.5" strokeLinejoin="round" />
         <path
           d="M12 14L16 10L22 16"
-          stroke="currentColor"
+          stroke="#00C67E"
           strokeWidth="1.5"
           strokeLinejoin="round"
         />
@@ -67,7 +68,7 @@ const ImagePlaceholder = ({ label, style }: { label: string; style?: React.CSSPr
       <p
         style={{
           fontFamily: "var(--font-inter)",
-          color: "rgba(0,0,0,0.15)",
+          color: "rgba(0,0,0,0.2)",
           fontSize: 12,
           fontWeight: 500,
           marginTop: 6,
@@ -81,12 +82,13 @@ const ImagePlaceholder = ({ label, style }: { label: string; style?: React.CSSPr
 
 export default function Hero() {
   return (
-    <section style={{ width: "100%", backgroundColor: "#fafafa", overflow: "hidden" }}>
+    <section style={{ width: "100%", backgroundColor: "#F1F0EC", overflow: "hidden" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <div
           className="grid grid-cols-1 lg:grid-cols-[42%_32%_26%]"
           style={{ alignItems: "center", paddingTop: 60, paddingBottom: 32 }}
         >
+          {/* LEFT column — Main heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,15 +102,16 @@ export default function Hero() {
                 fontWeight: 500,
                 lineHeight: 1.05,
                 letterSpacing: "-0.05em",
-                color: "#1e1e1e",
+                color: "#1A1A2E",
                 margin: 0,
               }}
             >
-              Your Factory&apos;s Next 10 Years of Productivity
-              <span style={{ color: "#ff4000" }}>.</span>
+              The AI-Powered Patient Success Platform
+              <span style={{ color: "#00C67E" }}>.</span>
             </h1>
           </motion.div>
 
+          {/* CENTER column — Platform Preview illustration */}
           <motion.div
             className="hidden lg:flex"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -116,11 +119,19 @@ export default function Hero() {
             transition={{ ...spring, delay: 0.2 }}
             style={{ justifyContent: "center", padding: "0 16px" }}
           >
-            <div style={{ width: "100%", aspectRatio: "3/4" }}>
-              <ImagePlaceholder label="Illustration" />
+            <div style={{ width: "100%", aspectRatio: "3/4", borderRadius: 16, overflow: "hidden" }}>
+              <Image
+                src="/assets/platform-preview.png"
+                alt="Zavis AI Healthcare Platform"
+                width={384}
+                height={512}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                priority
+              />
             </div>
           </motion.div>
 
+          {/* RIGHT column — Subtitle, body, nothing else */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,12 +149,15 @@ export default function Hero() {
                   fontWeight: 600,
                   lineHeight: 1.3,
                   letterSpacing: "-0.02em",
-                  color: "#1e1e1e",
+                  color: "#1A1A2E",
                   margin: 0,
                 }}
               >
-                Your Factory Is Stuck in Yesterday&apos;s Tools —{" "}
-                <span style={{ color: "#ff4000" }}>Set It Free in a Week.</span>
+                Every Patient Interaction.
+                <br />
+                Every Channel.
+                <br />
+                <span style={{ color: "#00C67E" }}>Fully Automated.</span>
               </h2>
               <p
                 style={{
@@ -155,14 +169,15 @@ export default function Hero() {
                   margin: 0,
                 }}
               >
-                Ditch spreadsheets and rigid software modules. You explain the pain, Humble listens
-                to your operators, agents write the code, and{" "}
-                <strong style={{ color: "#1e1e1e" }}>ship a live Factory OS in 24 hours.</strong>
+                From the first call to follow-up care, Zavis handles scheduling,
+                intake, engagement, and coordination &mdash; powered by AI that
+                understands healthcare.
               </p>
             </div>
           </motion.div>
         </div>
 
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -170,7 +185,7 @@ export default function Hero() {
           style={{ display: "flex", justifyContent: "center", paddingBottom: 48 }}
         >
           <a
-            href="#call"
+            href="#demo"
             style={{
               fontFamily: "var(--font-inter)",
               display: "inline-flex",
@@ -179,18 +194,19 @@ export default function Hero() {
               height: 52,
               padding: "0 36px",
               borderRadius: 100,
-              backgroundColor: "#1e1e1e",
+              backgroundColor: "#1A1A2E",
               color: "#fff",
               fontSize: 15,
               fontWeight: 600,
               textDecoration: "none",
             }}
           >
-            Start my 24h Build
+            Book a Demo
           </a>
         </motion.div>
       </div>
 
+      {/* Landscape gradient + laptop mockup */}
       <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
         <div
           className="h-[300px] lg:h-[500px]"
@@ -198,9 +214,10 @@ export default function Hero() {
             position: "relative",
             width: "100%",
             background:
-              "linear-gradient(180deg, #7EC8E3 0%, #A8D5A2 35%, #5B8C5A 55%, #3A6B3E 70%, #2D5A2F 100%)",
+              "linear-gradient(180deg, #E6F9F0 0%, #8DFFB9 25%, #00C67E 50%, #00A368 75%, #1A1A2E 100%)",
           }}
         >
+          {/* Left decorative pillar */}
           <div
             className="hidden lg:block"
             style={{
@@ -209,10 +226,11 @@ export default function Hero() {
               left: "5%",
               width: 100,
               height: "60%",
-              backgroundColor: "#ff4000",
+              backgroundColor: "#00C67E",
               borderRadius: "12px 12px 0 0",
             }}
           />
+          {/* Right decorative pillar */}
           <div
             className="hidden lg:block"
             style={{
@@ -221,12 +239,13 @@ export default function Hero() {
               right: "5%",
               width: 100,
               height: "60%",
-              backgroundColor: "#ff4000",
+              backgroundColor: "#00C67E",
               borderRadius: "12px 12px 0 0",
             }}
           />
         </div>
 
+        {/* Laptop mockup */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
@@ -236,16 +255,21 @@ export default function Hero() {
             zIndex: 1,
             maxWidth: 900,
             margin: "0 auto",
-            marginTop: -360,
             borderRadius: "24px 24px 0 0",
             overflow: "hidden",
-            border: "3px solid #1e1e1e",
+            border: "3px solid #1A1A2E",
             borderBottom: "none",
           }}
           className="-mt-[200px] lg:-mt-[360px]"
         >
-          <div style={{ width: "100%", aspectRatio: "16/10" }}>
-            <VideoPlaceholder label="Hero Video" />
+          <div style={{ width: "100%", aspectRatio: "16/10", position: "relative" }}>
+            <Image
+              src="/assets/hero-dashboard.png"
+              alt="Zavis Healthcare Dashboard"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
           </div>
         </motion.div>
       </div>

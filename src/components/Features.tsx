@@ -1,7 +1,13 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView } from "framer-motion";
+
+const featureImages: Record<string, string> = {
+  "Your 24/7 AI Front Desk": "/assets/ai-receptionist.png",
+  "Meet Patients on WhatsApp": "/assets/whatsapp-booking.png",
+};
 
 const VideoPlaceholder = ({ label }: { label: string }) => (
   <div
@@ -47,46 +53,46 @@ const VideoPlaceholder = ({ label }: { label: string }) => (
 
 const features = [
   {
-    tag: "Production-Grade Operational Software",
-    title: "Custom Software That Codes Itself",
-    subtitle: "Describe it today, operators use it tomorrow",
-    body: "Not templates or drag-and-drop. Humble generates actual software from your descriptions\u2014complex forms, multi-step procedures, validation logic, custom reports. Need to track cavity-specific defects with photo documentation? Every workflow, dashboard, and process is real code, built exactly for your operation.",
-    orangeBg: false,
+    tag: "AI Receptionist",
+    title: "Your 24/7 AI Front Desk",
+    subtitle: "Never miss a patient call again",
+    body: "Zavis\u2019s AI receptionist greets every patient, answers common questions, collects demographics and ID photos, and creates appointments \u2014 all without human intervention. Handle 10x the call volume with the same team.",
+    greenBg: false,
   },
   {
-    tag: "Minimal Work Screens",
-    title: "An Interface Everyone Can Use",
-    subtitle: "Teams typically ramp in about 15 minutes",
-    body: "Because Humble is generated from your own process, each screen shows only what matters for that role, station, or step. The best interface is almost no interface\u2014do the work and the system quietly guides the next action, checks what\u2019s critical, and records the data. Adoption sticks across operators, planners, quality, maintenance, and leadership.",
-    orangeBg: true,
+    tag: "WhatsApp Native",
+    title: "Meet Patients on WhatsApp",
+    subtitle: "The channel 2 billion people already use",
+    body: "Scheduling, intake forms, payment links, lab results, prescription refills \u2014 all delivered through WhatsApp. No app downloads, no patient portals. Just instant, intelligent conversations that feel personal.",
+    greenBg: true,
   },
   {
-    tag: "Living Schedule That Adapts",
-    title: "Scheduling That Knows Your Reality",
-    subtitle: "No more Excel tetris",
-    body: "A dynamic engine that understands your exact constraints\u2014tools, crews, materials, deadlines\u2014and adapts in real time. It isn\u2019t just a plan; it\u2019s a live, self-optimizing response system, tuned daily by frontline feedback.",
-    orangeBg: false,
+    tag: "Smart Scheduling",
+    title: "Intelligent Appointment Engine",
+    subtitle: "Zero double-bookings, zero no-shows",
+    body: "AI-powered scheduling that understands doctor availability, department capacity, procedure duration, and patient preferences. Automated reminders cut no-shows by up to 40%. Waitlist management fills cancellations instantly.",
+    greenBg: false,
   },
   {
-    tag: "AI-Ready Clean Data Backbone",
-    title: "A Perfect, Iterative Data Foundation",
-    subtitle: "Your factory becomes instantly AI-ready",
-    body: "Because Humble refines each component with your users every 24 hours, data entry becomes friction-free and error-proof. The result is a pristine, real-time data stream\u2014exactly what serious optimization and AI initiatives demand.",
-    orangeBg: false,
+    tag: "EMR Integration",
+    title: "Connects to Everything You Run",
+    subtitle: "M@DAS, Practo, Unite, Helix \u2014 and more",
+    body: "Zavis plugs into your existing EMR in days, not months. Bi-directional sync means patient data flows seamlessly. No manual re-entry, no data silos, no middleware nightmares.",
+    greenBg: false,
   },
   {
-    tag: "Deep Operational Intelligence",
-    title: "Your Company\u2019s Searchable Brain",
-    subtitle: "Ask anything about your operation and get researched answers",
-    body: "\u201cWhy did yield drop yesterday?\u201d triggers analysis across thousands of data points. \u201cWhat\u2019s our real unit cost?\u201d pulls from actual run data, not estimates. Every SOP, manual, and piece of tribal knowledge becomes instantly searchable institutional memory.",
-    orangeBg: true,
+    tag: "Analytics & Insights",
+    title: "Your Practice\u2019s Command Center",
+    subtitle: "From gut feel to data-driven decisions",
+    body: "Conversation heatmaps show peak hours. First response times track team performance. AI agent close rates measure automation ROI. CSAT scores and campaign analytics round out the picture \u2014 all real-time, all actionable.",
+    greenBg: true,
   },
   {
-    tag: "Connect to Anything",
-    title: "Universal Integration Into Your Architecture",
-    subtitle: "No middleware, no consultants, just describe what you need",
-    body: "Drop in equipment manuals, API docs, or database schemas\u2014Humble writes the integration code. That 1990s German sensor, the proprietary lab system, even Bob\u2019s macro-heavy Excel\u2014all connected.",
-    orangeBg: false,
+    tag: "Care Coordination",
+    title: "Automated Patient Journeys",
+    subtitle: "From first contact to lifetime loyalty",
+    body: "Discharge follow-ups, cycle-based reminders, prescription refill alerts, satisfaction surveys \u2014 Zavis orchestrates the entire patient journey. Every touchpoint is timely, personalized, and tracked.",
+    greenBg: false,
   },
 ];
 
@@ -102,7 +108,7 @@ function FeatureCard({
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const isOrange = feature.orangeBg;
+  const isGreen = feature.greenBg;
   const isReversed = index % 2 !== 0;
 
   return (
@@ -117,11 +123,11 @@ function FeatureCard({
         mass: 2,
       }}
       style={{
-        backgroundColor: isOrange ? "#ff4000" : "#fff",
+        backgroundColor: isGreen ? "#00C67E" : "#fff",
         borderRadius: 24,
         overflow: "hidden",
         boxShadow: cardShadow,
-        border: isOrange ? "none" : "1px solid rgba(0,0,0,0.12)",
+        border: isGreen ? "none" : "1px solid rgba(0,0,0,0.08)",
       }}
     >
       <div
@@ -133,9 +139,19 @@ function FeatureCard({
             flex: "1 1 50%",
             minHeight: 300,
             overflow: "hidden",
+            position: "relative",
           }}
         >
-          <VideoPlaceholder label={feature.title} />
+          {featureImages[feature.title] ? (
+            <Image
+              src={featureImages[feature.title]}
+              alt={feature.title}
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          ) : (
+            <VideoPlaceholder label={feature.title} />
+          )}
         </div>
 
         <div
@@ -154,7 +170,7 @@ function FeatureCard({
               fontWeight: 600,
               textTransform: "uppercase",
               letterSpacing: "0.08em",
-              color: isOrange ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.32)",
+              color: isGreen ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.32)",
               margin: "0 0 14px",
             }}
           >
@@ -167,7 +183,7 @@ function FeatureCard({
               fontWeight: 500,
               lineHeight: 1.2,
               letterSpacing: "-0.03em",
-              color: isOrange ? "#fff" : "#1c1c1c",
+              color: isGreen ? "#fff" : "#1A1A2E",
               margin: "0 0 8px",
             }}
           >
@@ -178,7 +194,7 @@ function FeatureCard({
               fontFamily: "var(--font-geist)",
               fontSize: 15,
               fontWeight: 600,
-              color: isOrange ? "#fff" : "#1c1c1c",
+              color: isGreen ? "#fff" : "#1A1A2E",
               margin: "0 0 12px",
             }}
           >
@@ -190,7 +206,7 @@ function FeatureCard({
               fontSize: 15,
               fontWeight: 500,
               lineHeight: 1.5,
-              color: isOrange ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.56)",
+              color: isGreen ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.56)",
               margin: 0,
             }}
           >
@@ -209,7 +225,7 @@ export default function Features() {
   return (
     <section
       ref={ref}
-      style={{ width: "100%", backgroundColor: "#fafafa", padding: "60px 0 80px" }}
+      style={{ width: "100%", backgroundColor: "#F1F0EC", padding: "60px 0 80px" }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
         <motion.div
@@ -235,7 +251,7 @@ export default function Features() {
               marginBottom: 16,
             }}
           >
-            Humble Platform
+            Zavis Platform
           </p>
           <h3
             style={{
@@ -244,11 +260,11 @@ export default function Features() {
               fontWeight: 500,
               lineHeight: 1.1,
               letterSpacing: "-0.052em",
-              color: "#1c1c1c",
+              color: "#1A1A2E",
               margin: 0,
             }}
           >
-            Every Humble Instance Includes
+            Everything Your Practice Needs, Built In
           </h3>
         </motion.div>
 

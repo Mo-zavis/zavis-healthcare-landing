@@ -3,16 +3,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HumbleLogoMark = () => (
-  <svg viewBox="0 0 24 10.909" width="24" height="11" className="shrink-0">
-    <path d="M 6.545 0 L 10.909 0 L 10.909 4.364 L 6.545 4.364 Z M 4.364 6.545 L 4.364 4.364 L 6.545 4.364 L 6.545 6.545 L 10.909 6.545 L 10.909 4.364 L 13.091 4.364 L 13.091 6.545 L 17.455 6.545 L 17.455 4.364 L 13.091 4.364 L 13.091 0 L 17.455 0 L 17.455 4.364 L 19.636 4.364 L 19.636 6.545 L 17.455 6.545 L 17.455 10.909 L 13.091 10.909 L 13.091 6.545 L 10.909 6.545 L 10.909 10.909 L 6.545 10.909 L 6.545 6.545 L 4.364 6.545 Z M 0 4.364 L 4.364 4.364 L 4.364 0 L 0 0 Z M 19.636 0 L 24 0 L 24 4.364 L 19.636 4.364 Z" fill="currentColor" />
+const ZavisLogoMark = () => (
+  <svg viewBox="0 0 24 24" width="24" height="24" className="shrink-0">
+    <rect width="24" height="24" rx="6" fill="#00C67E" />
+    <path
+      d="M6 7.5H18V9.5H10.5L18 16.5V18.5H6V16.5H13.5L6 9.5V7.5Z"
+      fill="#fff"
+    />
   </svg>
 );
 
 const navLinks = [
-  { label: "60-Second Fit Test", href: "#fit-test" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Security", href: "#security" },
+  { label: "Platform", href: "#platform" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Integrations", href: "#integrations" },
   { label: "About", href: "#about" },
 ];
 
@@ -28,7 +32,9 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   return (
@@ -46,9 +52,11 @@ export default function Navbar() {
           fontWeight: 500,
         }}
       >
-        <span style={{ opacity: 0.7 }}>(HyperLaunch slots fill fast</span>
-        <span style={{ color: "#ff4000" }}> — </span>
-        <span style={{ opacity: 0.7 }}>3 left this month)</span>
+        <span style={{ opacity: 0.7 }}>
+          Join 50+ healthcare providers already using Zavis
+        </span>
+        <span style={{ color: "#00C67E" }}> — </span>
+        <span style={{ opacity: 0.7 }}>See why they switched</span>
       </div>
 
       {/* Main Nav */}
@@ -58,10 +66,12 @@ export default function Navbar() {
           top: 0,
           zIndex: 50,
           width: "100%",
-          backgroundColor: scrolled ? "rgba(255,255,255,0.9)" : "#fafafa",
+          backgroundColor: scrolled
+            ? "rgba(241,240,236,0.9)"
+            : "#F1F0EC",
           backdropFilter: scrolled ? "blur(16px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-          borderBottom: "1px solid rgba(0,0,0,0.12)",
+          borderBottom: "1px solid rgba(0,0,0,0.08)",
           transition: "background-color 0.3s, backdrop-filter 0.3s",
         }}
       >
@@ -77,20 +87,47 @@ export default function Navbar() {
           }}
         >
           {/* Logo */}
-          <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", color: "#000" }}>
-            <HumbleLogoMark />
-            <span style={{ fontFamily: "var(--font-degular)", fontSize: 20, fontWeight: 700, letterSpacing: "-0.03em", color: "#000" }}>
-              humble
+          <a
+            href="/"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              textDecoration: "none",
+              color: "#1A1A2E",
+            }}
+          >
+            <ZavisLogoMark />
+            <span
+              style={{
+                fontFamily: "var(--font-degular)",
+                fontSize: 20,
+                fontWeight: 700,
+                letterSpacing: "-0.03em",
+                color: "#1A1A2E",
+              }}
+            >
+              zavis
             </span>
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex" style={{ alignItems: "center", gap: 36 }}>
+          <div
+            className="hidden md:flex"
+            style={{ alignItems: "center", gap: 36 }}
+          >
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                style={{ fontFamily: "var(--font-inter)", fontSize: 14, fontWeight: 500, color: "rgba(0,0,0,0.56)", textDecoration: "none" }}
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: 14,
+                  fontWeight: 500,
+                  color: "rgba(0,0,0,0.56)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
               >
                 {link.label}
               </a>
@@ -99,23 +136,24 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <a
-            href="#call"
+            href="#demo"
             className="hidden md:flex"
             style={{
               fontFamily: "var(--font-inter)",
               height: 36,
               padding: "0 20px",
               borderRadius: 100,
-              backgroundColor: "#000",
+              backgroundColor: "#00C67E",
               color: "#fff",
               fontSize: 13,
               fontWeight: 600,
               alignItems: "center",
               justifyContent: "center",
               textDecoration: "none",
+              transition: "background-color 0.2s",
             }}
           >
-            Book a Call
+            Book a Demo
           </a>
 
           {/* Mobile Hamburger */}
@@ -137,13 +175,33 @@ export default function Navbar() {
             }}
           >
             <motion.span
-              style={{ display: "block", width: 18, height: 1.5, backgroundColor: "#000", transformOrigin: "center" }}
-              animate={mobileOpen ? { rotate: 45, y: 3.25 } : { rotate: 0, y: 0 }}
+              style={{
+                display: "block",
+                width: 18,
+                height: 1.5,
+                backgroundColor: "#1A1A2E",
+                transformOrigin: "center",
+              }}
+              animate={
+                mobileOpen
+                  ? { rotate: 45, y: 3.25 }
+                  : { rotate: 0, y: 0 }
+              }
               transition={{ duration: 0.2 }}
             />
             <motion.span
-              style={{ display: "block", width: 18, height: 1.5, backgroundColor: "#000", transformOrigin: "center" }}
-              animate={mobileOpen ? { rotate: -45, y: -3.25 } : { rotate: 0, y: 0 }}
+              style={{
+                display: "block",
+                width: 18,
+                height: 1.5,
+                backgroundColor: "#1A1A2E",
+                transformOrigin: "center",
+              }}
+              animate={
+                mobileOpen
+                  ? { rotate: -45, y: -3.25 }
+                  : { rotate: 0, y: 0 }
+              }
               transition={{ duration: 0.2 }}
             />
           </button>
@@ -164,10 +222,17 @@ export default function Navbar() {
               inset: 0,
               top: 100,
               zIndex: 40,
-              backgroundColor: "#fafafa",
+              backgroundColor: "#F1F0EC",
             }}
           >
-            <div style={{ display: "flex", flexDirection: "column", padding: 24, gap: 8 }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: 24,
+                gap: 8,
+              }}
+            >
               {navLinks.map((link) => (
                 <a
                   key={link.label}
@@ -177,7 +242,7 @@ export default function Navbar() {
                     fontFamily: "var(--font-inter)",
                     fontSize: 16,
                     fontWeight: 500,
-                    color: "#000",
+                    color: "#1A1A2E",
                     padding: "12px 16px",
                     borderRadius: 8,
                     textDecoration: "none",
@@ -188,14 +253,14 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#call"
+                href="#demo"
                 onClick={() => setMobileOpen(false)}
                 style={{
                   fontFamily: "var(--font-inter)",
                   marginTop: 16,
                   height: 44,
-                  borderRadius: 8,
-                  backgroundColor: "#000",
+                  borderRadius: 100,
+                  backgroundColor: "#00C67E",
                   color: "#fff",
                   fontSize: 14,
                   fontWeight: 600,
@@ -205,7 +270,7 @@ export default function Navbar() {
                   justifyContent: "center",
                 }}
               >
-                Book a Call
+                Book a Demo
               </a>
             </div>
           </motion.div>
