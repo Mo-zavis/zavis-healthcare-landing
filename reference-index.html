@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZAVIS — Healthcare customer engagement platform coordinating conversations, workflows, and follow-ups across voice, messaging, scheduling, and payments.">
+  <title>ZAVIS — Operational Engagement for Healthcare</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP NAVIGATION
+       ========================================================================== -->
+  <nav class="nav" id="main-nav">
+    <div class="container nav__inner">
+      <div class="nav__left">
+        <div class="nav__logo">ZAVIS</div>
+
+        <ul class="nav__menu" id="nav-menu">
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="#who-its-for" class="nav__link">Who it's for</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-grid">
+              <div class="nav__dropdown-column">
+                <a href="/hospitals.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🏥</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Hospitals</h3>
+                    <p class="nav__dropdown-desc">Enterprise solutions for multi-location systems</p>
+                  </div>
+                </a>
+                <a href="/practices.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">⚕️</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Private Practices</h3>
+                    <p class="nav__dropdown-desc">Streamlined tools for independent clinics</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="/dental.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🦷</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Dental Clinics</h3>
+                    <p class="nav__dropdown-desc">Specialized workflows for dental care</p>
+                  </div>
+                </a>
+                <a href="/vision.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">👁️</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Vision Centers</h3>
+                    <p class="nav__dropdown-desc">Patient engagement for eye care</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="/pharmacy.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">💊</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Pharmacies</h3>
+                    <p class="nav__dropdown-desc">Prescription reminders and refills</p>
+                  </div>
+                </a>
+                <a href="/wellness.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🏃</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Wellness Centers</h3>
+                    <p class="nav__dropdown-desc">Engagement for holistic health</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="#services" class="nav__link">Services</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-grid">
+              <div class="nav__dropdown-column">
+                <a href="#ai" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">💬</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Conversational AI</h3>
+                    <p class="nav__dropdown-desc">Voice and messaging coordination</p>
+                  </div>
+                </a>
+                <a href="#scheduling" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📅</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Smart Scheduling</h3>
+                    <p class="nav__dropdown-desc">Automated appointment booking</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="#reminders" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🔔</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Automated Reminders</h3>
+                    <p class="nav__dropdown-desc">Multi-channel notifications</p>
+                  </div>
+                </a>
+                <a href="#payments" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">💳</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Payment Processing</h3>
+                    <p class="nav__dropdown-desc">Seamless billing collection</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="#analytics" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📊</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Analytics Dashboard</h3>
+                    <p class="nav__dropdown-desc">Real-time engagement insights</p>
+                  </div>
+                </a>
+                <a href="#integration" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🔗</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">EHR Integration</h3>
+                    <p class="nav__dropdown-desc">Connect existing systems</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="#workflows" class="nav__link">Workflows</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-grid">
+              <div class="nav__dropdown-column">
+                <a href="#front-office" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📞</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Front Office</h3>
+                    <p class="nav__dropdown-desc">Automate calls and inquiries</p>
+                  </div>
+                </a>
+                <a href="#back-office" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">⚙️</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Back Office</h3>
+                    <p class="nav__dropdown-desc">Streamline billing and admin</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="#growth" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📈</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Growth Tools</h3>
+                    <p class="nav__dropdown-desc">Patient acquisition campaigns</p>
+                  </div>
+                </a>
+                <a href="#recalls" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🔄</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Patient Recalls</h3>
+                    <p class="nav__dropdown-desc">Automated follow-ups</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="#reviews" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">⭐</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Review Management</h3>
+                    <p class="nav__dropdown-desc">Build online reputation</p>
+                  </div>
+                </a>
+                <a href="#forms" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📋</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Forms & Intake</h3>
+                    <p class="nav__dropdown-desc">Digital patient documentation</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="#security" class="nav__link">Security</a>
+        </li>
+        </ul>
+      </div>
+
+      <div class="nav__actions">
+        <a href="#cta" class="button button--dark button--sm">Book a Demo</a>
+      </div>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav__toggle-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO SECTION (Split layout: Copy left, Product UI right)
+       ========================================================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <!-- Left: Copy -->
+        <div class="hero__content reveal">
+          <span class="eyebrow">Operational Engagement for Healthcare</span>
+          <h1 class="hero__headline">Turn every patient interaction<br>into action.</h1>
+          <p class="hero__subhead">
+            Healthcare customer engagement platform coordinating conversations, workflows, and follow-ups across voice, messaging, scheduling, and payments.
+          </p>
+          <div class="hero__actions">
+            <a href="#cta" class="button button--dark button--lg">Book a Demo</a>
+          </div>
+        </div>
+
+        <!-- Right: Product UI mockup -->
+        <div class="hero__product reveal">
+          <div class="product-ui">
+            <div class="product-ui__header">
+              <span class="status-badge status-badge--active">Live</span>
+              <span class="product-ui__title">Patient Conversation</span>
+            </div>
+            <div class="product-ui__messages">
+              <div class="message message--patient">
+                <p>Hi, I need to book an appointment for next week</p>
+                <span class="message__time">10:42 AM</span>
+              </div>
+              <div class="message message--ai">
+                <p>I can help you with that. What type of appointment are you looking for?</p>
+                <span class="message__time">10:42 AM</span>
+              </div>
+              <div class="message message--patient">
+                <p>General checkup with Dr. Ahmed</p>
+                <span class="message__time">10:43 AM</span>
+              </div>
+              <div class="message message--ai">
+                <p>I have availability on Tuesday at 2:00 PM or Thursday at 10:30 AM. Which works better?</p>
+                <span class="message__time">10:43 AM</span>
+              </div>
+            </div>
+            <div class="product-ui__footer">
+              <span class="ai-indicator">AI managing conversation</span>
+              <button class="takeover-btn">Human Takeover</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Client Logo Ticker -->
+      <div class="hero__clients">
+        <div class="logo-ticker">
+          <div class="logo-ticker__track">
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/neurosolution-center-dubai.png" alt="NeuroSolution Center of Dubai">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/flowspace-logo.png" alt="Flowspace">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/kent-healthcare.png" alt="Kent Healthcare">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-logo-1.png" alt="Client Logo">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3157.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3161.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3162.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3163.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/main-logo.png" alt="Client">
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/neurosolution-center-dubai.png" alt="NeuroSolution Center of Dubai">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/flowspace-logo.png" alt="Flowspace">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/kent-healthcare.png" alt="Kent Healthcare">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-logo-1.png" alt="Client Logo">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3157.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3161.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3162.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/client-image-3163.png" alt="Client">
+            </div>
+            <div class="logo-ticker__item">
+              <img src="/assets/images/clients/main-logo.png" alt="Client">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHO IT'S FOR (3 ICP cards)
+       ========================================================================== -->
+  <section class="section section--cream" id="who-its-for">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Who we serve</span>
+        <h2>Built for high-volume healthcare operations</h2>
+        <p class="section-subhead">
+          We work with organizations managing complex patient engagement across multiple locations in the GCC region.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card reveal">
+          <h3 class="card__title">Hospital & Health System Groups</h3>
+          <p class="card__description">
+            Managing appointment flow and patient follow-ups across sites is complex. We centralize engagement and automate routine coordination.
+          </p>
+          <ul class="card__bullets">
+            <li>Multi-site operation coordination</li>
+            <li>Centralized patient engagement</li>
+          </ul>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">Multi-Location Specialty Networks</h3>
+          <p class="card__description">
+            High patient volume requires consistent workflows. We ensure every location follows the same engagement standards.
+          </p>
+          <ul class="card__bullets">
+            <li>Consistent cross-location workflows</li>
+            <li>Scalable engagement automation</li>
+          </ul>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">High-Growth Outpatient Clinics</h3>
+          <p class="card__description">
+            Growing without adding headcount means smarter operations. We handle engagement so your teams can focus on care.
+          </p>
+          <ul class="card__bullets">
+            <li>Scale operations without hiring</li>
+            <li>Focus staff on patient care</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OUTCOMES (4 metrics - tangible, operational)
+       ========================================================================== -->
+  <section class="section section--white" id="outcomes">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Operational impact</span>
+        <h2>Measurable outcomes for your operations</h2>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="metric-card reveal">
+          <h3 class="metric-card__title">Faster Access</h3>
+          <p class="metric-card__description">
+            Reduce time from inquiry to booked appointment by handling conversations instantly.
+          </p>
+        </div>
+
+        <div class="metric-card reveal">
+          <h3 class="metric-card__title">Lower Workload</h3>
+          <p class="metric-card__description">
+            Automate routine follow-ups, reminders, and scheduling to reduce manual coordination.
+          </p>
+        </div>
+
+        <div class="metric-card reveal">
+          <h3 class="metric-card__title">Better Utilization</h3>
+          <p class="metric-card__description">
+            Fill schedule gaps and reduce no-shows with automated recall and confirmation flows.
+          </p>
+        </div>
+
+        <div class="metric-card reveal">
+          <h3 class="metric-card__title">Consistent Follow-Through</h3>
+          <p class="metric-card__description">
+            Ensure post-visit instructions, payments, and reviews happen without staff chasing patients.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CORE SERVICES (4 capability cards)
+       ========================================================================== -->
+  <section class="section section--cream" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Full engagement lifecycle</span>
+        <h2>From first contact to post-visit follow-up</h2>
+        <p class="section-subhead">
+          We coordinate the full patient engagement journey so your teams can focus on care delivery.
+        </p>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="card__title">Engagement Inbox</h3>
+          <p class="card__description">
+            Unified conversations across voice and messaging with intelligent routing and staff summaries.
+          </p>
+          <ul class="card__features">
+            <li>Omnichannel conversation management</li>
+            <li>Smart escalation to staff</li>
+          </ul>
+        </div>
+
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h3 class="card__title">Scheduling & Intake</h3>
+          <p class="card__description">
+            Automated booking flows with eligibility screening and digital form collection.
+          </p>
+          <ul class="card__features">
+            <li>AI-powered scheduling automation</li>
+            <li>Pre-visit intake workflows</li>
+          </ul>
+        </div>
+
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+              <line x1="1" y1="10" x2="23" y2="10"></line>
+            </svg>
+          </div>
+          <h3 class="card__title">Payments & Reviews</h3>
+          <p class="card__description">
+            Automated payment collection, deposit reminders, and post-visit feedback requests.
+          </p>
+          <ul class="card__features">
+            <li>Payment link generation and follow-up</li>
+            <li>Review and feedback collection</li>
+          </ul>
+        </div>
+
+        <div class="card reveal">
+          <div class="card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3 class="card__title">Outreach & Recall</h3>
+          <p class="card__description">
+            Patient reactivation campaigns, follow-up reminders, and population-based outreach.
+          </p>
+          <ul class="card__features">
+            <li>Automated recall campaigns</li>
+            <li>Post-visit follow-up sequences</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WORKFLOWS SHOWCASE
+       ========================================================================== -->
+  <section class="section section--white" id="workflows">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">How it works</span>
+        <h2>Workflows reflect real clinic operations</h2>
+        <p class="section-subhead">
+          Our workflows aren't idealized chatbot scripts — they're built for how healthcare actually operates.
+        </p>
+      </div>
+
+      <div class="workflow-showcase">
+        <!-- Workflow 1: Front Office -->
+        <div class="workflow-item reveal">
+          <div class="workflow-item__content">
+            <h3>Streamline front office operations</h3>
+            <p>
+              Handle incoming calls, schedule appointments, answer common questions, and collect intake information — all without increasing staff workload.
+            </p>
+            <ul class="card__bullets">
+              <li>24/7 call answering and appointment booking</li>
+              <li>Automated intake and eligibility verification</li>
+              <li>Smart escalation to staff when needed</li>
+            </ul>
+          </div>
+          <div class="workflow-item__image">
+            <img src="/assets/images/workflow/front-office.jpg" alt="Front office automation workflow" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Workflow 2: Back Office -->
+        <div class="workflow-item reveal">
+          <div class="workflow-item__content">
+            <h3>Simplify back office coordination</h3>
+            <p>
+              Automate payment reminders, insurance follow-ups, and administrative tasks so your team can focus on complex cases.
+            </p>
+            <ul class="card__bullets">
+              <li>Automated payment collection and reminders</li>
+              <li>Insurance verification workflows</li>
+              <li>Post-visit documentation follow-up</li>
+            </ul>
+          </div>
+          <div class="workflow-item__image">
+            <img src="/assets/images/workflow/back-office.jpg" alt="Back office automation workflow" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Workflow 3: Growth -->
+        <div class="workflow-item reveal">
+          <div class="workflow-item__content">
+            <h3>Grow your practice</h3>
+            <p>
+              Reactivate inactive patients, generate reviews, and run targeted outreach campaigns to fill your schedule.
+            </p>
+            <ul class="card__bullets">
+              <li>Patient recall and reactivation campaigns</li>
+              <li>Automated review generation</li>
+              <li>Targeted outreach for specific services</li>
+            </ul>
+          </div>
+          <div class="workflow-item__image">
+            <img src="/assets/images/workflow/grow-practice.jpg" alt="Practice growth workflow" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECURITY & COMPLIANCE
+       ========================================================================== -->
+  <section class="section section--white" id="security">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Enterprise security</span>
+        <h2>Designed for healthcare data environments</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="card reveal">
+          <h3 class="card__title">Data Protection</h3>
+          <p class="card__description">
+            End-to-end encryption and secure data handling designed for healthcare environments.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">Access Control</h3>
+          <p class="card__description">
+            Role-based permissions and audit logs for complete visibility and control.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">Compliance Support</h3>
+          <p class="card__description">
+            Built to support regulatory compliance requirements in GCC healthcare systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PROOF (2-column: Quote + Case)
+       ========================================================================== -->
+  <section class="section section--dark" id="proof">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Early results</span>
+        <h2>Pilot partners seeing impact</h2>
+      </div>
+
+      <div class="proof-grid">
+        <div class="testimonial reveal">
+          <p class="testimonial__quote">
+            "ZAVIS handles our patient conversations so our front desk can focus on in-person care. We're booking more appointments without adding staff."
+          </p>
+          <div class="testimonial__author">Operations Director</div>
+          <div class="testimonial__role">Multi-location Specialty Clinic, UAE</div>
+        </div>
+
+        <div class="case-metrics reveal">
+          <h3>Pilot results</h3>
+          <div class="case-metric">
+            <div class="case-metric__label">Response Time</div>
+            <div class="case-metric__value">Under 60 seconds</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric__label">Automation Rate</div>
+            <div class="case-metric__value">70% of inquiries</div>
+          </div>
+          <div class="case-metric">
+            <div class="case-metric__label">Staff Workload</div>
+            <div class="case-metric__value">Reduced by 40%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FINAL CTA
+       ========================================================================== -->
+  <section class="section section--cream" id="cta">
+    <div class="container">
+      <div class="cta-grid reveal">
+        <div class="cta-content">
+          <h2>Start seeing impact quickly</h2>
+          <p>
+            Our team supports configuration and rollout so you can begin automating patient engagement workflows without disrupting operations.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="#" class="button button--dark button--lg">Book a Demo</a>
+          <p class="cta-note">30-minute walkthrough of ZAVIS for your operations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">ZAVIS</div>
+          <p class="footer__tagline">
+            Operational engagement platform for healthcare. Coordinate patient conversations, workflows, and follow-ups across every touchpoint.
+          </p>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__heading">Product</h4>
+          <ul class="footer__links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#workflows">Workflows</a></li>
+            <li><a href="#integrations">Integrations</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 ZAVIS Healthcare Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

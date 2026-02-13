@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ZAVIS for Pharmacies — Automate prescription reminders, refill requests, and medication counseling follow-ups. Improve adherence and retention.">
+  <title>ZAVIS for Pharmacies — Operational Engagement Platform</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP NAVIGATION
+       ========================================================================== -->
+  <nav class="nav" id="main-nav">
+    <div class="container nav__inner">
+      <div class="nav__logo">
+        <a href="index.html">ZAVIS</a>
+      </div>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="index.html#who-its-for" class="nav__link">Who it's for</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-grid">
+              <div class="nav__dropdown-column">
+                <a href="hospitals.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🏥</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Hospitals</h3>
+                    <p class="nav__dropdown-desc">Enterprise solutions for multi-location systems</p>
+                  </div>
+                </a>
+                <a href="practices.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">⚕️</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Private Practices</h3>
+                    <p class="nav__dropdown-desc">Streamlined tools for independent clinics</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="dental.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🦷</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Dental Clinics</h3>
+                    <p class="nav__dropdown-desc">Specialized workflows for dental care</p>
+                  </div>
+                </a>
+                <a href="vision.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">👁️</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Vision Centers</h3>
+                    <p class="nav__dropdown-desc">Patient engagement for eye care</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="pharmacy.html" class="nav__dropdown-item nav__dropdown-item--active">
+                  <div class="nav__dropdown-icon">💊</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Pharmacies</h3>
+                    <p class="nav__dropdown-desc">Prescription reminders and refills</p>
+                  </div>
+                </a>
+                <a href="wellness.html" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🏃</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Wellness Centers</h3>
+                    <p class="nav__dropdown-desc">Engagement for holistic health</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="index.html#services" class="nav__link">Services</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-grid">
+              <div class="nav__dropdown-column">
+                <a href="index.html#ai" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">💬</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Conversational AI</h3>
+                    <p class="nav__dropdown-desc">Voice and messaging coordination</p>
+                  </div>
+                </a>
+                <a href="index.html#scheduling" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📅</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Smart Scheduling</h3>
+                    <p class="nav__dropdown-desc">Automated appointment booking</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="index.html#reminders" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🔔</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Automated Reminders</h3>
+                    <p class="nav__dropdown-desc">Multi-channel notifications</p>
+                  </div>
+                </a>
+                <a href="index.html#payments" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">💳</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Payment Processing</h3>
+                    <p class="nav__dropdown-desc">Seamless billing collection</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="index.html#analytics" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📊</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Analytics Dashboard</h3>
+                    <p class="nav__dropdown-desc">Real-time engagement insights</p>
+                  </div>
+                </a>
+                <a href="index.html#integration" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🔗</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">EHR Integration</h3>
+                    <p class="nav__dropdown-desc">Connect existing systems</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item nav__item--has-dropdown">
+          <a href="index.html#workflows" class="nav__link">Workflows</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-grid">
+              <div class="nav__dropdown-column">
+                <a href="index.html#front-office" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📞</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Front Office</h3>
+                    <p class="nav__dropdown-desc">Automate calls and inquiries</p>
+                  </div>
+                </a>
+                <a href="index.html#back-office" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">⚙️</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Back Office</h3>
+                    <p class="nav__dropdown-desc">Streamline billing and admin</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="index.html#growth" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📈</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Growth Tools</h3>
+                    <p class="nav__dropdown-desc">Patient acquisition campaigns</p>
+                  </div>
+                </a>
+                <a href="index.html#recalls" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">🔄</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Patient Recalls</h3>
+                    <p class="nav__dropdown-desc">Automated follow-ups</p>
+                  </div>
+                </a>
+              </div>
+              <div class="nav__dropdown-column">
+                <a href="index.html#reviews" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">⭐</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Review Management</h3>
+                    <p class="nav__dropdown-desc">Build online reputation</p>
+                  </div>
+                </a>
+                <a href="index.html#forms" class="nav__dropdown-item">
+                  <div class="nav__dropdown-icon">📋</div>
+                  <div>
+                    <h3 class="nav__dropdown-title">Forms & Intake</h3>
+                    <p class="nav__dropdown-desc">Digital patient documentation</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a href="index.html#security" class="nav__link">Security</a>
+        </li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="#cta" class="button button--dark button--sm">Book a Demo</a>
+      </div>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav__toggle-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       SPECIALTY HERO SECTION
+       ========================================================================== -->
+  <section class="specialty-hero" id="hero" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%), url('/assets/images/hero/hero-pharmacy.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="container">
+      <div class="specialty-hero__content reveal">
+        <span class="eyebrow">For Pharmacies</span>
+        <h1 class="specialty-hero__headline">Improve medication adherence with automated patient engagement</h1>
+        <p class="specialty-hero__subhead">
+          We automate prescription refill reminders, medication pickup notifications, and adherence follow-ups so your pharmacists can focus on patient counseling.
+        </p>
+        <div class="specialty-hero__actions">
+          <a href="#cta" class="button button--dark button--lg">Book a Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ROI CALCULATOR SECTION
+       ========================================================================== -->
+  <section class="section section--cream" id="calculator">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">The admin load is real. So is the upside.</span>
+        <h2>See what ZAVIS can unlock for your practice</h2>
+      </div>
+
+      <div class="calculator reveal">
+        <div class="calculator__inputs">
+          <div class="calculator__field">
+            <label for="locations">Number of clinic locations</label>
+            <input type="number" id="locations" value="3" min="1" max="100">
+          </div>
+
+          <div class="calculator__field">
+            <label for="calls">Weekly patient calls/messages</label>
+            <input type="range" id="calls" min="50" max="1000" value="200" step="10">
+            <span class="calculator__value" id="calls-value">200</span>
+          </div>
+
+          <div class="calculator__field">
+            <label for="visit-cost">Average appointment value (AED)</label>
+            <input type="number" id="visit-cost" value="500" min="100" step="50">
+          </div>
+
+          <div class="calculator__field">
+            <label>24/7 engagement capability</label>
+            <div class="calculator__radio-group">
+              <label class="calculator__radio">
+                <input type="radio" name="after-hours" value="yes" checked>
+                <span>Yes</span>
+              </label>
+              <label class="calculator__radio">
+                <input type="radio" name="after-hours" value="no">
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="calculator__output">
+          <div class="calculator__result">
+            <span class="calculator__result-label">Estimated monthly impact</span>
+            <span class="calculator__result-value" id="result-value">AED 42,000</span>
+          </div>
+          <p class="calculator__disclaimer">
+            Based on improved booking rates, reduced no-shows, and better schedule utilization. Actual results vary by clinic operations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VALUE PROPOSITION CARDS
+       ========================================================================== -->
+  <section class="section section--white" id="value-props">
+    <div class="container">
+      <div class="grid grid--3">
+        <div class="value-card reveal">
+          <div class="value-card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="value-card__title">Automate refill reminders</h3>
+          <p class="value-card__description">
+            Send timely refill notifications and handle pickup scheduling automatically, improving medication adherence.
+          </p>
+        </div>
+
+        <div class="value-card reveal">
+          <div class="value-card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="value-card__title">Reduce missed pickups</h3>
+          <p class="value-card__description">
+            Automated pickup reminders and delivery coordination ensure patients get their medications on time.
+          </p>
+        </div>
+
+        <div class="value-card reveal">
+          <div class="value-card__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+          </div>
+          <h3 class="value-card__title">Support medication adherence</h3>
+          <p class="value-card__description">
+            Follow up on new prescriptions, check for side effects, and remind patients about medication schedules.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURE SECTIONS (Dental-specific workflows)
+       ========================================================================== -->
+  <section class="section section--cream" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Built for dental operations</span>
+        <h2>Workflows designed for how dental clinics actually operate</h2>
+      </div>
+
+      <div class="feature-blocks">
+        <!-- Feature 1 -->
+        <div class="feature-block reveal">
+          <div class="feature-block__content">
+            <h3 class="feature-block__title">24/7 appointment scheduling</h3>
+            <p class="feature-block__description">
+              Patients can book cleanings, consultations, or emergency slots any time of day. Our system checks availability, confirms appointments, and sends reminders automatically.
+            </p>
+            <ul class="feature-block__bullets">
+              <li>Instant booking for routine and emergency appointments</li>
+              <li>Smart scheduling based on provider availability and treatment type</li>
+              <li>Automated confirmations and pre-visit reminders</li>
+            </ul>
+          </div>
+          <div class="feature-block__visual">
+            <div class="feature-visual">
+              <div class="feature-visual__header">Appointment Request</div>
+              <div class="feature-visual__content">
+                <div class="chat-message chat-message--patient">
+                  <p>I need to schedule a cleaning for next week</p>
+                </div>
+                <div class="chat-message chat-message--ai">
+                  <p>I can help with that. Do you prefer morning or afternoon?</p>
+                </div>
+                <div class="chat-message chat-message--patient">
+                  <p>Morning works better</p>
+                </div>
+                <div class="chat-message chat-message--ai">
+                  <p>I have Tuesday at 9:00 AM or Thursday at 10:30 AM available with Dr. Al-Rahman. Which works for you?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-block feature-block--reverse reveal">
+          <div class="feature-block__content">
+            <h3 class="feature-block__title">Patient recall campaigns</h3>
+            <p class="feature-block__description">
+              Keep your schedule full with automated reminders for routine cleanings, overdue check-ups, and treatment plan follow-ups.
+            </p>
+            <ul class="feature-block__bullets">
+              <li>6-month cleaning reminders</li>
+              <li>Treatment plan follow-ups</li>
+              <li>Overdue appointment reactivation</li>
+            </ul>
+          </div>
+          <div class="feature-block__visual">
+            <div class="feature-visual">
+              <div class="feature-visual__header">Recall Campaign</div>
+              <div class="feature-visual__content">
+                <div class="campaign-card">
+                  <div class="campaign-card__status">Active</div>
+                  <h4>6-Month Cleaning Recall</h4>
+                  <div class="campaign-card__stats">
+                    <div class="stat">
+                      <span class="stat__value">247</span>
+                      <span class="stat__label">Sent</span>
+                    </div>
+                    <div class="stat">
+                      <span class="stat__value">89</span>
+                      <span class="stat__label">Booked</span>
+                    </div>
+                    <div class="stat">
+                      <span class="stat__value">36%</span>
+                      <span class="stat__label">Rate</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-block reveal">
+          <div class="feature-block__content">
+            <h3 class="feature-block__title">Payment collection & reminders</h3>
+            <p class="feature-block__description">
+              Automate payment requests, deposit collections, and outstanding balance follow-ups without awkward conversations.
+            </p>
+            <ul class="feature-block__bullets">
+              <li>Pre-treatment deposit collection</li>
+              <li>Post-visit payment reminders</li>
+              <li>Payment plan follow-ups</li>
+            </ul>
+          </div>
+          <div class="feature-block__visual">
+            <div class="feature-visual">
+              <div class="feature-visual__header">Payment Request</div>
+              <div class="feature-visual__content">
+                <div class="payment-card">
+                  <div class="payment-card__header">
+                    <span>Outstanding Balance</span>
+                    <span class="payment-card__amount">AED 1,200</span>
+                  </div>
+                  <div class="payment-card__details">
+                    <p>Root canal treatment - Dr. Al-Rahman</p>
+                    <p class="payment-card__date">Visit: Jan 15, 2026</p>
+                  </div>
+                  <button class="payment-card__button">Pay Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMPARISON SECTION (With vs Without)
+       ========================================================================== -->
+  <section class="section section--white" id="comparison">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>A tale of two dental clinics</h2>
+      </div>
+
+      <div class="comparison reveal">
+        <div class="comparison__column comparison__column--with">
+          <div class="comparison__header">
+            <div class="comparison__icon comparison__icon--check">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3>With ZAVIS</h3>
+          </div>
+          <ul class="comparison__list">
+            <li>Every call and message answered instantly</li>
+            <li>Appointments booked 24/7, even after hours</li>
+            <li>Front desk focused on in-clinic patient care</li>
+            <li>Automated recall campaigns keep schedule full</li>
+            <li>Payment reminders handled automatically</li>
+            <li>Consistent patient communication across all locations</li>
+          </ul>
+        </div>
+
+        <div class="comparison__column comparison__column--without">
+          <div class="comparison__header">
+            <div class="comparison__icon comparison__icon--cross">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <h3>Without ZAVIS</h3>
+          </div>
+          <ul class="comparison__list">
+            <li>Missed calls lead to lost appointments</li>
+            <li>Booking only available during business hours</li>
+            <li>Staff overwhelmed with phone calls and admin tasks</li>
+            <li>Manual recall spreadsheets and calling lists</li>
+            <li>Chasing patients for payment</li>
+            <li>Inconsistent workflows across multiple locations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TESTIMONIAL / PROOF
+       ========================================================================== -->
+  <section class="section section--dark" id="testimonial">
+    <div class="container">
+      <div class="specialty-testimonial reveal">
+        <div class="specialty-testimonial__quote">
+          "ZAVIS handles our patient conversations so our front desk can focus on in-person care. We're booking more appointments without adding staff."
+        </div>
+        <div class="specialty-testimonial__author">
+          <div class="specialty-testimonial__name">Dr. Amira Hassan</div>
+          <div class="specialty-testimonial__role">Clinic Director, Multi-location Dental Group, Dubai</div>
+        </div>
+
+        <div class="specialty-testimonial__metrics">
+          <div class="metric-stat">
+            <div class="metric-stat__value">92%</div>
+            <div class="metric-stat__label">of calls answered instantly</div>
+          </div>
+          <div class="metric-stat">
+            <div class="metric-stat__value">30%</div>
+            <div class="metric-stat__label">increase in bookings</div>
+          </div>
+          <div class="metric-stat">
+            <div class="metric-stat__value">24/7</div>
+            <div class="metric-stat__label">patient engagement</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ SECTION
+       ========================================================================== -->
+  <section class="section section--cream" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Common questions</span>
+        <h2>What dental clinics ask about ZAVIS</h2>
+      </div>
+
+      <div class="faq reveal">
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Does ZAVIS understand dental-specific terminology?</span>
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Yes. Our platform is trained on dental workflows, treatment types, and common patient questions. We understand the difference between cleanings, fillings, root canals, cosmetic procedures, and emergency visits.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>How does ZAVIS integrate with our practice management system?</span>
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>We connect with your existing scheduling and patient management systems through secure API integrations. Our team handles the technical setup so your staff doesn't need IT expertise.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>Can ZAVIS handle emergency appointment requests?</span>
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Absolutely. Our system recognizes urgent cases like severe pain, broken teeth, or dental trauma and prioritizes them accordingly. We can also escalate to your on-call staff when needed.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>What languages does ZAVIS support for patient conversations?</span>
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>We support English and Arabic as primary languages, with additional language support based on your patient population. Our platform can switch languages mid-conversation based on patient preference.</p>
+          </div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__question" aria-expanded="false">
+            <span>How quickly can we get ZAVIS up and running?</span>
+            <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq__answer">
+            <p>Most dental clinics are live within 2-3 weeks. We handle system integration, workflow configuration, and team training. You'll see impact from day one as ZAVIS starts managing conversations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FINAL CTA
+       ========================================================================== -->
+  <section class="section section--white" id="cta">
+    <div class="container">
+      <div class="cta-grid reveal">
+        <div class="cta-content">
+          <h2>Ready to fill more chairs?</h2>
+          <p>
+            Our team supports configuration and rollout for dental clinics. Start automating patient engagement workflows without disrupting your operations.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="#" class="button button--dark button--lg">Book a Demo</a>
+          <p class="cta-note">30-minute walkthrough of ZAVIS for dental clinics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <a href="index.html">ZAVIS</a>
+          </div>
+          <p class="footer__tagline">
+            Operational engagement platform for healthcare. Coordinate patient conversations, workflows, and follow-ups across every touchpoint.
+          </p>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__heading">Who it's for</h4>
+          <ul class="footer__links">
+            <li><a href="hospitals.html">Hospitals</a></li>
+            <li><a href="dental.html">Dental Clinics</a></li>
+            <li><a href="vision.html">Vision Centers</a></li>
+            <li><a href="pharmacy.html">Pharmacies</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__heading">Product</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#workflows">Workflows</a></li>
+            <li><a href="index.html#security">Security</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#terms">Terms</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 ZAVIS Healthcare Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>
