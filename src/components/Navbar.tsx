@@ -3,21 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const ZavisLogoMark = () => (
-  <svg viewBox="0 0 24 24" width="24" height="24" className="shrink-0">
-    <rect width="24" height="24" rx="6" fill="#00C67E" />
-    <path
-      d="M6 7.5H18V9.5H10.5L18 16.5V18.5H6V16.5H13.5L6 9.5V7.5Z"
-      fill="#fff"
-    />
-  </svg>
-);
-
 const navLinks = [
-  { label: "Platform", href: "#platform" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Integrations", href: "#integrations" },
-  { label: "About", href: "#about" },
+  { label: "Who it's for", href: "#who-its-for" },
+  { label: "Services", href: "#services" },
+  { label: "Workflows", href: "#workflows" },
+  { label: "Security", href: "#security" },
 ];
 
 export default function Navbar() {
@@ -26,7 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -39,82 +29,72 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Banner */}
-      <div
-        style={{
-          width: "100%",
-          backgroundColor: "#000",
-          color: "#fff",
-          textAlign: "center",
-          padding: "10px 16px",
-          fontFamily: "var(--font-inter)",
-          fontSize: 13,
-          fontWeight: 500,
-        }}
-      >
-        <span style={{ opacity: 0.7 }}>
-          Join 50+ healthcare providers already using Zavis
-        </span>
-        <span style={{ color: "#00C67E" }}> — </span>
-        <span style={{ opacity: 0.7 }}>See why they switched</span>
-      </div>
-
-      {/* Main Nav */}
+      {/* Floating Navbar */}
       <nav
         style={{
-          position: "sticky",
-          top: 0,
+          position: "fixed",
+          top: 20,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "calc(100% - 40px)",
+          maxWidth: 1400,
           zIndex: 50,
-          width: "100%",
+          borderRadius: 50,
           backgroundColor: scrolled
-            ? "rgba(241,240,236,0.9)"
-            : "#F1F0EC",
-          backdropFilter: scrolled ? "blur(16px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-          borderBottom: "1px solid rgba(0,0,0,0.08)",
-          transition: "background-color 0.3s, backdrop-filter 0.3s",
+            ? "rgba(26, 26, 26, 0.95)"
+            : "rgba(26, 26, 26, 0.6)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
+          boxShadow: scrolled
+            ? "0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)"
+            : "none",
+          transition:
+            "background-color 0.3s ease, box-shadow 0.3s ease",
         }}
       >
         <div
           style={{
-            maxWidth: 1200,
-            margin: "0 auto",
-            padding: "0 32px",
             height: 64,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            padding: "0 24px",
           }}
         >
           {/* Logo */}
           <a
             href="/"
             style={{
+              textDecoration: "none",
               display: "flex",
               alignItems: "center",
-              gap: 10,
-              textDecoration: "none",
-              color: "#1A1A2E",
             }}
           >
-            <ZavisLogoMark />
             <span
               style={{
                 fontFamily: "var(--font-degular)",
-                fontSize: 20,
-                fontWeight: 700,
-                letterSpacing: "-0.03em",
-                color: "#1A1A2E",
+                fontSize: "1.25rem",
+                fontWeight: 600,
+                fontStyle: "italic",
+                color: "#FFFFFF",
+                letterSpacing: "-0.01em",
               }}
             >
-              zavis
+              ZAVIS
             </span>
           </a>
 
-          {/* Desktop Links */}
+          {/* Desktop Nav Links */}
           <div
-            className="hidden md:flex"
-            style={{ alignItems: "center", gap: 36 }}
+            className="hidden lg:flex"
+            style={{
+              alignItems: "center",
+              gap: 32,
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}
           >
             {navLinks.map((link) => (
               <a
@@ -123,10 +103,17 @@ export default function Navbar() {
                 style={{
                   fontFamily: "var(--font-inter)",
                   fontSize: 14,
-                  fontWeight: 500,
-                  color: "rgba(0,0,0,0.56)",
+                  fontWeight: 400,
+                  color: "rgba(255, 255, 255, 0.85)",
                   textDecoration: "none",
-                  transition: "color 0.2s",
+                  transition: "color 0.2s ease",
+                  whiteSpace: "nowrap",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "#FFFFFF";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
                 }}
               >
                 {link.label}
@@ -137,20 +124,29 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <a
             href="#demo"
-            className="hidden md:flex"
+            className="hidden lg:flex"
             style={{
               fontFamily: "var(--font-inter)",
-              height: 36,
-              padding: "0 20px",
-              borderRadius: 100,
-              backgroundColor: "#00C67E",
-              color: "#fff",
-              fontSize: 13,
-              fontWeight: 600,
               alignItems: "center",
               justifyContent: "center",
+              padding: "0.5rem 1.25rem",
+              borderRadius: 50,
+              backgroundColor: "#FFFFFF",
+              color: "#000000",
+              fontSize: 14,
+              fontWeight: 500,
               textDecoration: "none",
-              transition: "background-color 0.2s",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease",
+              whiteSpace: "nowrap",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 12px rgba(255, 255, 255, 0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
             }}
           >
             Book a Demo
@@ -158,7 +154,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger */}
           <button
-            className="md:hidden"
+            className="lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
             style={{
@@ -166,20 +162,22 @@ export default function Navbar() {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              width: 36,
-              height: 36,
+              width: 40,
+              height: 40,
               gap: 5,
               cursor: "pointer",
               background: "transparent",
               border: "none",
+              padding: 0,
             }}
           >
             <motion.span
               style={{
                 display: "block",
-                width: 18,
+                width: 20,
                 height: 1.5,
-                backgroundColor: "#1A1A2E",
+                backgroundColor: "#FFFFFF",
+                borderRadius: 1,
                 transformOrigin: "center",
               }}
               animate={
@@ -187,14 +185,15 @@ export default function Navbar() {
                   ? { rotate: 45, y: 3.25 }
                   : { rotate: 0, y: 0 }
               }
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25 }}
             />
             <motion.span
               style={{
                 display: "block",
-                width: 18,
+                width: 20,
                 height: 1.5,
-                backgroundColor: "#1A1A2E",
+                backgroundColor: "#FFFFFF",
+                borderRadius: 1,
                 transformOrigin: "center",
               }}
               animate={
@@ -202,7 +201,7 @@ export default function Navbar() {
                   ? { rotate: -45, y: -3.25 }
                   : { rotate: 0, y: 0 }
               }
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25 }}
             />
           </button>
         </div>
@@ -212,25 +211,31 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="lg:hidden"
             style={{
               position: "fixed",
-              inset: 0,
-              top: 100,
-              zIndex: 40,
-              backgroundColor: "#F1F0EC",
+              top: 92,
+              left: 16,
+              right: 16,
+              zIndex: 49,
+              backgroundColor: "rgba(26, 26, 26, 0.95)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              borderRadius: 20,
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              boxShadow: "0 16px 48px rgba(0, 0, 0, 0.4)",
+              overflow: "hidden",
             }}
           >
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                padding: 24,
-                gap: 8,
+                padding: "8px 0",
               }}
             >
               {navLinks.map((link) => (
@@ -240,42 +245,85 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   style={{
                     fontFamily: "var(--font-inter)",
-                    fontSize: 16,
-                    fontWeight: 500,
-                    color: "#1A1A2E",
-                    padding: "12px 16px",
-                    borderRadius: 8,
+                    fontSize: 18,
+                    fontWeight: 400,
+                    color: "rgba(255, 255, 255, 0.85)",
+                    padding: "14px 24px",
                     textDecoration: "none",
                     display: "block",
+                    transition: "background-color 0.15s ease, color 0.15s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor =
+                      "rgba(255, 255, 255, 0.06)";
+                    e.currentTarget.style.color = "#FFFFFF";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
                   }}
                 >
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#demo"
-                onClick={() => setMobileOpen(false)}
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  marginTop: 16,
-                  height: 44,
-                  borderRadius: 100,
-                  backgroundColor: "#00C67E",
-                  color: "#fff",
-                  fontSize: 14,
-                  fontWeight: 600,
-                  textDecoration: "none",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                Book a Demo
-              </a>
+              <div style={{ padding: "8px 24px 16px" }}>
+                <a
+                  href="#demo"
+                  onClick={() => setMobileOpen(false)}
+                  style={{
+                    fontFamily: "var(--font-inter)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    height: 48,
+                    borderRadius: 50,
+                    backgroundColor: "#FFFFFF",
+                    color: "#000000",
+                    fontSize: 15,
+                    fontWeight: 500,
+                    textDecoration: "none",
+                  }}
+                >
+                  Book a Demo
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Mobile overlay backdrop */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden"
+            onClick={() => setMobileOpen(false)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 48,
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile responsive overrides */}
+      <style jsx global>{`
+        @media (max-width: 1023px) {
+          nav[style] {
+            top: 16px !important;
+            width: calc(100% - 32px) !important;
+          }
+          nav[style] > div {
+            height: 56px !important;
+          }
+        }
+      `}</style>
     </>
   );
 }

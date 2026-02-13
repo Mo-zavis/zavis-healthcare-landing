@@ -1,15 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import SocialProof from "@/components/SocialProof";
-import MeetHumble from "@/components/MeetHumble";
-import OneTruth from "@/components/OneTruth";
-import EdgeCases from "@/components/EdgeCases";
-import Comparison from "@/components/Comparison";
-import Waterfall from "@/components/Waterfall";
-import Features from "@/components/Features";
-import Timeline from "@/components/Timeline";
-import Roadmap from "@/components/Roadmap";
-import FAQ from "@/components/FAQ";
+import WhoWeServe from "@/components/WhoWeServe";
+import Outcomes from "@/components/Outcomes";
+import CoreServices from "@/components/CoreServices";
+import Workflows from "@/components/Workflows";
+import Security from "@/components/Security";
+import Proof from "@/components/Proof";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 
@@ -19,16 +15,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <SocialProof />
-        <MeetHumble />
-        <OneTruth />
-        <EdgeCases />
-        <Comparison />
-        <Waterfall />
-        <Features />
-        <Timeline />
-        <Roadmap />
-        <FAQ />
+        <WhoWeServe />
+        <Outcomes />
+        <CoreServices />
+        <Workflows />
+        <Security />
+        <Proof />
         <FinalCTA />
       </main>
       <Footer />

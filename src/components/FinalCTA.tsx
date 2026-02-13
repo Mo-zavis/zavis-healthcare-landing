@@ -8,116 +8,159 @@ export default function FinalCTA() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} style={{ width: "100%", backgroundColor: "#F1F0EC", padding: "60px 0 80px" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ type: "spring", damping: 100, stiffness: 240, mass: 2, delay: 0.2 }}
+    <section
+      ref={ref}
+      style={{
+        width: "100%",
+        background: "linear-gradient(135deg, #F5F7FA 0%, #EEF1FA 100%)",
+      }}
+    >
+      {/* Responsive padding via className + inline fallback */}
+      <div className="finalcta-section-pad">
+        <div
+          className="finalcta-container"
           style={{
-            position: "relative",
-            backgroundColor: "#1A1A2E",
-            borderRadius: 30,
-            padding: "64px 40px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            gap: 32,
-            overflow: "hidden",
+            maxWidth: 1200,
+            margin: "0 auto",
           }}
         >
-          {/* Subtle gradient accent */}
           <div
+            className="finalcta-grid"
             style={{
-              position: "absolute",
-              top: 0,
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: 300,
-              height: 2,
-              background: "linear-gradient(90deg, transparent 0%, #00C67E 50%, transparent 100%)",
+              maxWidth: 900,
+              margin: "0 auto",
+              alignItems: "center",
             }}
-          />
-
-          {/* Heart-pulse icon */}
-          <svg width="56" height="57" viewBox="0 0 56 57" fill="none" style={{ opacity: 0.8 }}>
-            {/* Heart outline */}
-            <path
-              d="M28 50C28 50 6 36 6 19.5C6 14.5 8.5 9.5 13 7.5C17.5 5.5 22.5 6.5 26 10L28 12.5L30 10C33.5 6.5 38.5 5.5 43 7.5C47.5 9.5 50 14.5 50 19.5C50 36 28 50 28 50Z"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-            {/* Pulse line through the heart */}
-            <path
-              d="M10 28.5H20L23 22.5L26.5 34.5L30 22.5L33 28.5H46"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-          </svg>
-
-          <h2 style={{ fontFamily: "var(--font-degular)", fontSize: 44, fontWeight: 600, lineHeight: 1.1, letterSpacing: "-0.052em", color: "#fff", margin: 0, maxWidth: 600 }}>
-            Ready to Transform Patient Engagement?
-          </h2>
-
-          <p style={{ fontFamily: "var(--font-geist)", fontSize: 16, fontWeight: 400, lineHeight: 1.5, color: "rgba(255,255,255,0.5)", margin: 0, maxWidth: 500 }}>
-            Book a demo to see Zavis in action, or start your free pilot to experience the difference.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center" style={{ gap: 12 }}>
-            <a
-              href="#demo"
-              style={{
-                fontFamily: "var(--font-inter)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: 48,
-                padding: "0 28px",
-                borderRadius: 8,
-                backgroundColor: "#00C67E",
-                color: "#fff",
-                fontSize: 15,
-                fontWeight: 600,
-                border: "none",
-                cursor: "pointer",
-                transition: "filter 0.2s",
-                textDecoration: "none",
+          >
+            {/* Left — Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                type: "spring",
+                damping: 100,
+                stiffness: 240,
+                mass: 2,
+                delay: 0.2,
               }}
             >
-              Book a Demo
-            </a>
-            <a
-              href="#pilot"
+              <h2
+                style={{
+                  fontFamily: "var(--font-degular)",
+                  fontSize: "clamp(1.875rem, 4vw, 3rem)",
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                  color: "#171717",
+                  margin: 0,
+                  marginBottom: 16,
+                }}
+              >
+                Start seeing impact quickly
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 16,
+                  color: "#374151",
+                  lineHeight: 1.7,
+                  margin: 0,
+                }}
+              >
+                Our team supports configuration and rollout so you can begin
+                automating patient engagement workflows without disrupting
+                operations.
+              </p>
+            </motion.div>
+
+            {/* Right — Actions */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                type: "spring",
+                damping: 100,
+                stiffness: 240,
+                mass: 2,
+                delay: 0.35,
+              }}
               style={{
-                fontFamily: "var(--font-inter)",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                height: 48,
-                padding: "0 28px",
-                borderRadius: 8,
-                backgroundColor: "transparent",
-                color: "#fff",
-                fontSize: 15,
-                fontWeight: 600,
-                border: "1px solid rgba(255,255,255,0.2)",
-                cursor: "pointer",
-                transition: "background-color 0.2s",
-                textDecoration: "none",
+                flexDirection: "column",
+                gap: 16,
               }}
             >
-              Start Free Pilot
-            </a>
+              <a
+                href="#demo"
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "1rem 2.25rem",
+                  borderRadius: 9999,
+                  backgroundColor: "#FFFFFF",
+                  color: "#000000",
+                  fontSize: 16,
+                  fontWeight: 500,
+                  textDecoration: "none",
+                  border: "1px solid transparent",
+                  cursor: "pointer",
+                  transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 12px rgba(0, 0, 0, 0.15)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                Book a Demo
+              </a>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 14,
+                  color: "#6B7280",
+                  textAlign: "center",
+                  margin: 0,
+                }}
+              >
+                30-minute walkthrough of ZAVIS for your operations
+              </p>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
+
+      {/* Responsive styles */}
+      <style jsx global>{`
+        .finalcta-section-pad {
+          padding: 80px 0;
+        }
+        .finalcta-container {
+          padding: 0 24px;
+        }
+        .finalcta-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        @media (min-width: 768px) {
+          .finalcta-section-pad {
+            padding: 128px 0;
+          }
+          .finalcta-container {
+            padding: 0 48px;
+          }
+          .finalcta-grid {
+            grid-template-columns: 1.5fr 1fr;
+            gap: 48px;
+          }
+        }
+      `}</style>
     </section>
   );
 }

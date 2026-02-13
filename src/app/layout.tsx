@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Zavis — AI Powered Patient Success Platform",
-  description: "AI platform for patient acquisition, engagement, scheduling, automation, and care coordination across every channel at scale.",
+  title: "ZAVIS — Operational Engagement for Healthcare",
+  description: "Healthcare customer engagement platform coordinating conversations, workflows, and follow-ups across voice, messaging, scheduling, and payments.",
   openGraph: {
-    title: "Zavis — AI Powered Patient Success Platform",
-    description: "AI platform for patient acquisition, engagement, scheduling, automation, and care coordination across every channel at scale.",
+    title: "ZAVIS — Operational Engagement for Healthcare",
+    description: "Healthcare customer engagement platform coordinating conversations, workflows, and follow-ups across voice, messaging, scheduling, and payments.",
     type: "website",
   },
 };
